@@ -1,4 +1,4 @@
-const tagSchema = require("../schemas/tag.schema");
+const tagSchema = require("../schemas/tagSchema");
 
 const validarTag = (req, res, next) => {
   const { error } = tagSchema.validate(req.body);
