@@ -6,9 +6,11 @@ const PORT = process.env.PORT || 3000;
 
 const routerUsers = require("./routes/userRoutes");
 const routerFollowers = require("./routes/followerRoutes");
+const postRoutes = require('./routes/postsRoutes')
 
 app.use(express.json());
 
+app.use(postRoutes)
 app.use("/users", routerUsers);
 app.use("/followers", routerFollowers);
 
