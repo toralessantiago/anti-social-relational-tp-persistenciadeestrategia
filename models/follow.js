@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Follow.init({
-    followerId: {type:DataTypes.INTEGER, allowNull:false},
-    followingId: {type:DataTypes.INTEGER, allowNull:false}
+    followerNickname: {type:DataTypes.STRING, allowNull:false},
+    followingNickname: {type:DataTypes.STRING, allowNull:false}
   }, {
     sequelize,
     modelName: 'Follow',
