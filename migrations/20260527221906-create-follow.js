@@ -9,11 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      followerId: {
-        type: Sequelize.INTEGER
+      followerNickname: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      followingId: {
-        type: Sequelize.INTEGER
+      followingNickname: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
