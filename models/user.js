@@ -8,28 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-<<<<<<< HEAD
-      User.hasMany(models.Post, { foreignKey: "userNickname", as: "posts" });
-      User.hasMany(models.Comment, {
-        foreignKey: "userNickname",
-        as: "comments",
-      });
-      User.belongsToMany(models.User, {
-        through: "Follow",
-        foreignKey: "followingId",
-        as: "followers",
-      });
-      User.belongsToMany(models.User, {
-        through: "Follow",
-        foreignKey: "followerId",
-        as: "following",
-      });
-=======
       User.hasMany(models.Post,{foreignKey:'userNickname', as:'posts'})
       User.hasMany(models.Comment,{foreignKey:'userNickname',as:'comments'})
       User.belongsToMany(models.User, {through:'Follow',foreignKey:'followingNickname', as:'followers'})
       User.belongsToMany(models.User, {through:'Follow',foreignKey:'followerNickname', as:'following'})
->>>>>>> gonzaloHerlein/setup-modelado
     }
   }
   User.init(
