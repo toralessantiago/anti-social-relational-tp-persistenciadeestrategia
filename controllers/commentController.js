@@ -3,11 +3,13 @@ const { Op } = require('sequelize');
 
 const obtenerComentarios = async (req, res) => {
   try {
+    await Comment.update(
+      { visible: false },
+      { where: { createdAt: { [Op.lt]: req.cutoffDate } } }
+    )
+
     const comentarios = await Comment.findAll({
-      where: {
-        visible: true,
-        createdAt: { [Op.gte]: req.cutoffDate }
-      },
+      where: { visible: true }, 
       attributes: ["id", "content", "userId", "postId"],
       include: [
         { model: User, as: "user", attributes: ['nickName', 'email'] },
