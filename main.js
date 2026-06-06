@@ -9,7 +9,7 @@ const routerFollowers = require("./routes/followerRoutes");
 
 app.use(express.json());
 
-app.use("/users", routerUsers);
+app.use("/user", routerUsers);
 app.use("/followers", routerFollowers);
 
 app.listen(PORT, async () => {
