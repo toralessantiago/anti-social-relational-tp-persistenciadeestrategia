@@ -5,7 +5,7 @@ const userSchema = require("../schemas/userSchema");
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll({
-      attributes: ["id", "nickName", "email", "password"],
+      attributes: ["id", "nickName", "email"],
     });
 
     res.status(200).json({
@@ -23,7 +23,7 @@ const getUsers = async (req, res) => {
 const getUserById = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {
-      attributes: ["id", "nickName", "email", "password"],
+      attributes: ["id", "nickName", "email"],
     });
 
     if (!user) {
@@ -62,7 +62,6 @@ const createUser = async (req, res) => {
         id: user.id,
         nickName: user.nickName,
         email: user.email,
-        password: user.password,
       },
     });
   } catch (error) {
@@ -71,15 +70,40 @@ const createUser = async (req, res) => {
     });
   }
 };
-// UPDATE USER
+
+//UPDATE USER
 const updateUser = async (req, res) => {
   try {
+    const { error } = userSchema.validate(req.body, {
+      presence: "optional",
+    });
+
+    if (error) {
+      return res.status(400).json({
+        error: error.details[0].message,
+      });
+    }
+
     const user = await User.findByPk(req.params.id);
 
     if (!user) {
       return res.status(404).json({
         error: "Usuario no encontrado.",
       });
+    }
+
+    if (req.body.nickName) {
+      const existingUser = await User.findOne({
+        where: {
+          nickName: req.body.nickName,
+        },
+      });
+
+      if (existingUser && existingUser.id !== user.id) {
+        return res.status(400).json({
+          error: "El nickname ya existe.",
+        });
+      }
     }
 
     await user.update(req.body);
@@ -90,7 +114,6 @@ const updateUser = async (req, res) => {
         id: user.id,
         nickName: user.nickName,
         email: user.email,
-        password: user.password,
       },
     });
   } catch (error) {
