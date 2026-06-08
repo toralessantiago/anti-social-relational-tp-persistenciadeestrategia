@@ -64,7 +64,7 @@ const getFollowers = async (req, res) => {
     }
 
     const followers = await user.getFollowers({
-      attributes: ["id", "nickName", "email", "password"],
+      attributes: ["id", "nickName", "email"],
       joinTableAttributes: [],
     });
 
@@ -88,7 +88,7 @@ const getFollowing = async (req, res) => {
     }
 
     const following = await user.getFollowing({
-      attributes: ["id", "nickName", "email", "password"],
+      attributes: ["id", "nickName", "email"],
       joinTableAttributes: [],
     });
 
