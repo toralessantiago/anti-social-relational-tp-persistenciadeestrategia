@@ -1,5 +1,5 @@
 const { Comment, User, Post } = require('../models')
-const commentSchema = require('../schemas/comment.schema')
+const commentSchema = require('../schemas/commentSchema')
 
 const validarComment = (req, res, next) => {
     const { error } = commentSchema.validate(req.body)

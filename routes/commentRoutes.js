@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { obtenerComentarios, crearComentario, actualizarComentario, eliminarComentario } = require('../controllers/commentController');
-const { validarComment, validarCommentId } = require('../middlewares/commentMiddleware');
+const { validarComment, validarCommentId } = require('../middlewares/validarComment');
 const filtrarPorFecha = require('../middlewares/filtrarPorFecha')
 const router = Router();
 

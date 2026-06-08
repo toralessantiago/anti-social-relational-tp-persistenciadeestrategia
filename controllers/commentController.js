@@ -37,7 +37,7 @@ const crearComentario = async (req, res) => {
     res.status(201).json(comentario);
     } catch (error) {
         res.status(500).json({
-            error: "Error al crear comentario",
+             error: error.message,
     });
   }
 };
