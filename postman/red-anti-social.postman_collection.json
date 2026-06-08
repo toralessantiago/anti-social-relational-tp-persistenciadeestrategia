@@ -27,9 +27,13 @@
             "url": {
               "raw": "http://localhost:3000/users",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["users"]
+              "path": [
+                "users"
+              ]
             }
           },
           "response": [
@@ -50,9 +54,13 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users"]
+                  "path": [
+                    "users"
+                  ]
                 }
               },
               "status": "Created",
@@ -115,9 +123,13 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users"]
+                  "path": [
+                    "users"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -180,9 +192,13 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users"]
+                  "path": [
+                    "users"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -238,9 +254,13 @@
             "url": {
               "raw": "http://localhost:3000/users",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["users"]
+              "path": [
+                "users"
+              ]
             }
           },
           "response": [
@@ -252,9 +272,13 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users"]
+                  "path": [
+                    "users"
+                  ]
                 }
               },
               "status": "OK",
@@ -308,11 +332,24 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/users/2",
+              "raw": "http://localhost:3000/users/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["users", "2"]
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "2",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -324,9 +361,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/2",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "2"]
+                  "path": [
+                    "users",
+                    "2"
+                  ]
                 }
               },
               "status": "OK",
@@ -380,9 +422,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "99"]
+                  "path": [
+                    "users",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -436,9 +483,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/hola",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "hola"]
+                  "path": [
+                    "users",
+                    "hola"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -501,11 +553,24 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/users/2",
+              "raw": "http://localhost:3000/users/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["users", "2"]
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "2",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -526,9 +591,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/7",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "7"]
+                  "path": [
+                    "users",
+                    "7"
+                  ]
                 }
               },
               "status": "OK",
@@ -591,9 +661,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "99"]
+                  "path": [
+                    "users",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -647,11 +722,24 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/users/7",
+              "raw": "http://localhost:3000/users/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["users", "7"]
+              "path": [
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "7",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -663,9 +751,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "99"]
+                  "path": [
+                    "users",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -719,9 +812,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/hola",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "hola"]
+                  "path": [
+                    "users",
+                    "hola"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -775,9 +873,14 @@
                 "url": {
                   "raw": "http://localhost:3000/users/7",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["users", "7"]
+                  "path": [
+                    "users",
+                    "7"
+                  ]
                 }
               },
               "status": "OK",
@@ -836,11 +939,30 @@
             "method": "POST",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/followers/4/5",
+              "raw": "http://localhost:3000/followers/:userId/:targetId",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["followers", "4", "5"]
+              "path": [
+                "followers",
+                ":userId",
+                ":targetId"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "userId",
+                  "value": "4",
+                  "type": "string"
+                },
+                {
+                  "key": "targetId",
+                  "value": "5",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -852,9 +974,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/5",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "4", "5"]
+                  "path": [
+                    "followers",
+                    "4",
+                    "5"
+                  ]
                 }
               },
               "status": "OK",
@@ -908,9 +1036,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "4", "99"]
+                  "path": [
+                    "followers",
+                    "4",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -964,9 +1098,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/hola",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "4", "hola"]
+                  "path": [
+                    "followers",
+                    "4",
+                    "hola"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -1020,11 +1160,24 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/followers/3",
+              "raw": "http://localhost:3000/followers/:userId",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["followers", "3"]
+              "path": [
+                "followers",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "userId",
+                  "value": "3",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -1036,9 +1189,14 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/3",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "3"]
+                  "path": [
+                    "followers",
+                    "3"
+                  ]
                 }
               },
               "status": "OK",
@@ -1092,9 +1250,14 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "99"]
+                  "path": [
+                    "followers",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -1148,11 +1311,25 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/followers/following/2",
+              "raw": "http://localhost:3000/followers/following/:userId",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["followers", "following", "2"]
+              "path": [
+                "followers",
+                "following",
+                ":userId"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "userId",
+                  "value": "2",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -1164,9 +1341,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/following/2",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "following", "2"]
+                  "path": [
+                    "followers",
+                    "following",
+                    "2"
+                  ]
                 }
               },
               "status": "OK",
@@ -1220,9 +1403,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/following/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "following", "99"]
+                  "path": [
+                    "followers",
+                    "following",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -1276,11 +1465,30 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/followers/4/5",
+              "raw": "http://localhost:3000/followers/:userId/:targetId",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["followers", "4", "5"]
+              "path": [
+                "followers",
+                ":userId",
+                ":targetId"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "userId",
+                  "value": "4",
+                  "type": "string"
+                },
+                {
+                  "key": "targetId",
+                  "value": "5",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -1292,9 +1500,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "4", "99"]
+                  "path": [
+                    "followers",
+                    "4",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -1348,9 +1562,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/hola",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "4", "hola"]
+                  "path": [
+                    "followers",
+                    "4",
+                    "hola"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -1404,9 +1624,15 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/5",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["followers", "4", "5"]
+                  "path": [
+                    "followers",
+                    "4",
+                    "5"
+                  ]
                 }
               },
               "status": "OK",
@@ -1476,9 +1702,13 @@
             "url": {
               "raw": "http://localhost:3000/tags",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["tags"]
+              "path": [
+                "tags"
+              ]
             }
           },
           "response": [
@@ -1499,9 +1729,13 @@
                 "url": {
                   "raw": "http://localhost:3000/tags",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags"]
+                  "path": [
+                    "tags"
+                  ]
                 }
               },
               "status": "Created",
@@ -1564,9 +1798,13 @@
                 "url": {
                   "raw": "http://localhost:3000/tags",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags"]
+                  "path": [
+                    "tags"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -1629,9 +1867,13 @@
                 "url": {
                   "raw": "http://localhost:3000/tags",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags"]
+                  "path": [
+                    "tags"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -1694,9 +1936,13 @@
                 "url": {
                   "raw": "http://localhost:3000/tags",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags"]
+                  "path": [
+                    "tags"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -1752,9 +1998,13 @@
             "url": {
               "raw": "http://localhost:3000/tags",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["tags"]
+              "path": [
+                "tags"
+              ]
             }
           },
           "response": [
@@ -1766,9 +2016,13 @@
                 "url": {
                   "raw": "http://localhost:3000/tags",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags"]
+                  "path": [
+                    "tags"
+                  ]
                 }
               },
               "status": "OK",
@@ -1822,11 +2076,24 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/tags/1",
+              "raw": "http://localhost:3000/tags/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["tags", "1"]
+              "path": [
+                "tags",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -1838,9 +2105,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "1"]
+                  "path": [
+                    "tags",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",
@@ -1894,9 +2166,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "99"]
+                  "path": [
+                    "tags",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -1950,9 +2227,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/hola",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "hola"]
+                  "path": [
+                    "tags",
+                    "hola"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -2015,11 +2297,24 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/tags/1",
+              "raw": "http://localhost:3000/tags/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["tags", "1"]
+              "path": [
+                "tags",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -2040,9 +2335,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "1"]
+                  "path": [
+                    "tags",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",
@@ -2105,9 +2405,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "99"]
+                  "path": [
+                    "tags",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -2170,9 +2475,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "1"]
+                  "path": [
+                    "tags",
+                    "1"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -2235,9 +2545,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "1"]
+                  "path": [
+                    "tags",
+                    "1"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -2291,11 +2606,24 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/tags/1",
+              "raw": "http://localhost:3000/tags/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["tags", "1"]
+              "path": [
+                "tags",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -2307,9 +2635,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/3",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "3"]
+                  "path": [
+                    "tags",
+                    "3"
+                  ]
                 }
               },
               "status": "OK",
@@ -2363,9 +2696,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/3",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "3"]
+                  "path": [
+                    "tags",
+                    "3"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -2419,9 +2757,14 @@
                 "url": {
                   "raw": "http://localhost:3000/tags/hola",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["tags", "hola"]
+                  "path": [
+                    "tags",
+                    "hola"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -2492,11 +2835,25 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:3000/posts/1/images",
+                  "raw": "http://localhost:3000/posts/:id/images",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1", "images"]
+                  "path": [
+                    "posts",
+                    ":id",
+                    "images"
+                  ],
+                  "variable": [
+                    {
+                      "id": 0,
+                      "key": "id",
+                      "value": "1",
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "response": [
@@ -2517,9 +2874,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/images",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "images"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "images"
+                      ]
                     }
                   },
                   "status": "Created",
@@ -2582,9 +2945,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/images",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "images"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "images"
+                      ]
                     }
                   },
                   "status": "Bad Request",
@@ -2647,9 +3016,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/99/images",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "99", "images"]
+                      "path": [
+                        "posts",
+                        "99",
+                        "images"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -2703,11 +3078,25 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:3000/posts/1/images",
+                  "raw": "http://localhost:3000/posts/:id/images",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1", "images"]
+                  "path": [
+                    "posts",
+                    ":id",
+                    "images"
+                  ],
+                  "variable": [
+                    {
+                      "id": 0,
+                      "key": "id",
+                      "value": "1",
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "response": [
@@ -2719,9 +3108,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/images",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "images"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "images"
+                      ]
                     }
                   },
                   "status": "OK",
@@ -2775,9 +3170,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/99/images",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "99", "images"]
+                      "path": [
+                        "posts",
+                        "99",
+                        "images"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -2831,11 +3232,31 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:3000/posts/1/images/1",
+                  "raw": "http://localhost:3000/posts/:id/images/:imageId",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1", "images", "1"]
+                  "path": [
+                    "posts",
+                    ":id",
+                    "images",
+                    ":imageId"
+                  ],
+                  "variable": [
+                    {
+                      "id": 0,
+                      "key": "id",
+                      "value": "1",
+                      "type": "string"
+                    },
+                    {
+                      "key": "imageId",
+                      "value": "1",
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "response": [
@@ -2847,9 +3268,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/99/images/1",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "99", "images", "1"]
+                      "path": [
+                        "posts",
+                        "99",
+                        "images",
+                        "1"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -2903,9 +3331,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/images/99",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "images", "99"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "images",
+                        "99"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -2959,9 +3394,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/images/1",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "images", "1"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "images",
+                        "1"
+                      ]
                     }
                   },
                   "status": "OK",
@@ -3029,11 +3471,25 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:3000/posts/1/tags",
+                  "raw": "http://localhost:3000/posts/:id/tags",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1", "tags"]
+                  "path": [
+                    "posts",
+                    ":id",
+                    "tags"
+                  ],
+                  "variable": [
+                    {
+                      "id": 0,
+                      "key": "id",
+                      "value": "1",
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "response": [
@@ -3054,9 +3510,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/tags",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "tags"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "tags"
+                      ]
                     }
                   },
                   "status": "OK",
@@ -3119,9 +3581,15 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/99/tags",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "99", "tags"]
+                      "path": [
+                        "posts",
+                        "99",
+                        "tags"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -3175,11 +3643,31 @@
                 "method": "POST",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:3000/posts/1/tags/3",
+                  "raw": "http://localhost:3000/posts/:id/tags/:tagId",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1", "tags", "3"]
+                  "path": [
+                    "posts",
+                    ":id",
+                    "tags",
+                    ":tagId"
+                  ],
+                  "variable": [
+                    {
+                      "id": 0,
+                      "key": "id",
+                      "value": "1",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tagId",
+                      "value": "3",
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "response": [
@@ -3191,9 +3679,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/tags/3",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "tags", "3"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "tags",
+                        "3"
+                      ]
                     }
                   },
                   "status": "OK",
@@ -3247,9 +3742,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/99/tags/3",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "99", "tags", "3"]
+                      "path": [
+                        "posts",
+                        "99",
+                        "tags",
+                        "3"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -3303,9 +3805,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/tags/99",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "tags", "99"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "tags",
+                        "99"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -3359,11 +3868,31 @@
                 "method": "DELETE",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:3000/posts/1/tags/1",
+                  "raw": "http://localhost:3000/posts/:id/tags/:tagId",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1", "tags", "1"]
+                  "path": [
+                    "posts",
+                    ":id",
+                    "tags",
+                    ":tagId"
+                  ],
+                  "variable": [
+                    {
+                      "id": 0,
+                      "key": "id",
+                      "value": "1",
+                      "type": "string"
+                    },
+                    {
+                      "key": "tagId",
+                      "value": "1",
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "response": [
@@ -3375,9 +3904,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/99/tags/1",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "99", "tags", "1"]
+                      "path": [
+                        "posts",
+                        "99",
+                        "tags",
+                        "1"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -3431,9 +3967,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/tags/99",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "tags", "99"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "tags",
+                        "99"
+                      ]
                     }
                   },
                   "status": "Not Found",
@@ -3487,9 +4030,16 @@
                     "url": {
                       "raw": "http://localhost:3000/posts/1/tags/1",
                       "protocol": "http",
-                      "host": ["localhost"],
+                      "host": [
+                        "localhost"
+                      ],
                       "port": "3000",
-                      "path": ["posts", "1", "tags", "1"]
+                      "path": [
+                        "posts",
+                        "1",
+                        "tags",
+                        "1"
+                      ]
                     }
                   },
                   "status": "OK",
@@ -3556,9 +4106,13 @@
             "url": {
               "raw": "http://localhost:3000/posts",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["posts"]
+              "path": [
+                "posts"
+              ]
             }
           },
           "response": [
@@ -3579,9 +4133,13 @@
                 "url": {
                   "raw": "http://localhost:3000/posts",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts"]
+                  "path": [
+                    "posts"
+                  ]
                 }
               },
               "status": "Created",
@@ -3644,9 +4202,13 @@
                 "url": {
                   "raw": "http://localhost:3000/posts",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts"]
+                  "path": [
+                    "posts"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -3702,9 +4264,13 @@
             "url": {
               "raw": "http://localhost:3000/posts",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["posts"]
+              "path": [
+                "posts"
+              ]
             }
           },
           "response": [
@@ -3716,9 +4282,13 @@
                 "url": {
                   "raw": "http://localhost:3000/posts",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts"]
+                  "path": [
+                    "posts"
+                  ]
                 }
               },
               "status": "OK",
@@ -3772,11 +4342,24 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/posts/1",
+              "raw": "http://localhost:3000/posts/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["posts", "1"]
+              "path": [
+                "posts",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -3788,9 +4371,14 @@
                 "url": {
                   "raw": "http://localhost:3000/posts/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1"]
+                  "path": [
+                    "posts",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",
@@ -3844,9 +4432,14 @@
                 "url": {
                   "raw": "http://localhost:3000/posts/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "99"]
+                  "path": [
+                    "posts",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -3909,11 +4502,24 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/posts/1",
+              "raw": "http://localhost:3000/posts/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["posts", "1"]
+              "path": [
+                "posts",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -3934,9 +4540,14 @@
                 "url": {
                   "raw": "http://localhost:3000/posts/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1"]
+                  "path": [
+                    "posts",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",
@@ -3999,9 +4610,14 @@
                 "url": {
                   "raw": "http://localhost:3000/posts/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "99"]
+                  "path": [
+                    "posts",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -4055,11 +4671,24 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/posts/1",
+              "raw": "http://localhost:3000/posts/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["posts", "1"]
+              "path": [
+                "posts",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -4071,9 +4700,14 @@
                 "url": {
                   "raw": "http://localhost:3000/posts/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "99"]
+                  "path": [
+                    "posts",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -4127,9 +4761,14 @@
                 "url": {
                   "raw": "http://localhost:3000/posts/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["posts", "1"]
+                  "path": [
+                    "posts",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",
@@ -4199,9 +4838,13 @@
             "url": {
               "raw": "http://localhost:3000/comments",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["comments"]
+              "path": [
+                "comments"
+              ]
             }
           },
           "response": [
@@ -4222,9 +4865,13 @@
                 "url": {
                   "raw": "http://localhost:3000/comments",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments"]
+                  "path": [
+                    "comments"
+                  ]
                 }
               },
               "status": "Created",
@@ -4287,9 +4934,13 @@
                 "url": {
                   "raw": "http://localhost:3000/comments",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments"]
+                  "path": [
+                    "comments"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -4345,9 +4996,13 @@
             "url": {
               "raw": "http://localhost:3000/comments",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["comments"]
+              "path": [
+                "comments"
+              ]
             }
           },
           "response": [
@@ -4359,9 +5014,13 @@
                 "url": {
                   "raw": "http://localhost:3000/comments",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments"]
+                  "path": [
+                    "comments"
+                  ]
                 }
               },
               "status": "OK",
@@ -4424,11 +5083,24 @@
               }
             },
             "url": {
-              "raw": "http://localhost:3000/comments/1",
+              "raw": "http://localhost:3000/comments/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["comments", "1"]
+              "path": [
+                "comments",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -4449,9 +5121,14 @@
                 "url": {
                   "raw": "http://localhost:3000/comments/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments", "1"]
+                  "path": [
+                    "comments",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",
@@ -4514,9 +5191,14 @@
                 "url": {
                   "raw": "http://localhost:3000/comments/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments", "99"]
+                  "path": [
+                    "comments",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -4570,11 +5252,24 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "http://localhost:3000/comments/1",
+              "raw": "http://localhost:3000/comments/:id",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "3000",
-              "path": ["comments", "1"]
+              "path": [
+                "comments",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "id",
+                  "value": "1",
+                  "type": "string"
+                }
+              ]
             }
           },
           "response": [
@@ -4586,9 +5281,14 @@
                 "url": {
                   "raw": "http://localhost:3000/comments/99",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments", "99"]
+                  "path": [
+                    "comments",
+                    "99"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -4642,9 +5342,14 @@
                 "url": {
                   "raw": "http://localhost:3000/comments/1",
                   "protocol": "http",
-                  "host": ["localhost"],
+                  "host": [
+                    "localhost"
+                  ],
                   "port": "3000",
-                  "path": ["comments", "1"]
+                  "path": [
+                    "comments",
+                    "1"
+                  ]
                 }
               },
               "status": "OK",

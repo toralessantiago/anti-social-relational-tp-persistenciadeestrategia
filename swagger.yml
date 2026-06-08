@@ -1,0 +1,576 @@
+openapi: 3.0.3
+info:
+  title: Anti-Social Net API
+  version: 1.0.0
+  description: API REST para la plataforma Anti-Social Net implementada con Express y el ORM Sequelize.
+
+servers:
+  - url: http://localhost:3000
+tags:
+  - name: Users
+  - name: Posts
+  - name: Comments
+  - name: Tags
+  - name: Followers
+
+paths:
+  /users:
+    post:
+      tags:
+        - Users
+      summary: Crear User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nickName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              example:
+                nickName: juan
+                email: juanperez@gmail.com
+                password: prz365
+      responses:
+        "201":
+          description: Usuario creado exitosamente.
+        "400":
+          description: Datos de entrada inválidos.
+        "500":
+          description: Error interno del servidor.
+    get:
+      tags:
+        - Users
+      summary: Obtener Users
+      responses:
+        "200":
+          description: Lista de usuarios obtenida con éxito.
+
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Obtener User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID único del usuario.
+      responses:
+        "200":
+          description: Usuario encontrado.
+        "404":
+          description: Usuario no encontrado.
+    put:
+      tags:
+        - Users
+      summary: Actualizar User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nickName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              example:
+                nickName: pablo
+                email: pablogomez@gmail.com
+                password: dfg505
+      responses:
+        "200":
+          description: Usuario actualizado con éxito.
+        "404":
+          description: Usuario no encontrado.
+    delete:
+      tags:
+        - Users
+      summary: Eliminar User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Usuario eliminado con éxito.
+        "404":
+          description: Usuario no encontrado.
+
+  /followers/{userId}/{targetId}:
+    post:
+      tags:
+        - Followers
+      summary: Seguir User
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID del usuario que sigue.
+        - name: targetId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID del usuario a seguir.
+      responses:
+        "200":
+          description: Usuario seguido con éxito.
+    delete:
+      tags:
+        - Followers
+      summary: Dejar de Seguir User
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: targetId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Se dejó de seguir al usuario con éxito.
+        "404":
+          description: Usuario no encontrado.
+        "500":
+          description: Error interno del servidor.
+
+  /followers/{userId}:
+    get:
+      tags:
+        - Followers
+      summary: Obtener Followers
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Lista de seguidores obtenida con éxito.
+
+  /followers/following/{userId}:
+    get:
+      tags:
+        - Followers
+      summary: Obtener Seguidos
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Lista de usuarios seguidos obtenida con éxito.
+
+  /tags:
+    post:
+      tags:
+        - Tags
+      summary: Crear Tag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              example:
+                name: backend
+      responses:
+        "201":
+          description: Tag creado con éxito.
+    get:
+      tags:
+        - Tags
+      summary: Obtener Tags
+      responses:
+        "200":
+          description: Lista de tags obtenida con éxito.
+
+  /tags/{id}:
+    get:
+      tags:
+        - Tags
+      summary: Obtener Tag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Tag encontrado.
+        "404":
+          description: Tag no encontrado.
+    put:
+      tags:
+        - Tags
+      summary: Actualizar Tag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              example:
+                name: cine
+      responses:
+        "200":
+          description: Tag actualizado con éxito.
+        "404":
+          description: Tag no encontrado.
+    delete:
+      tags:
+        - Tags
+      summary: Eliminar Tag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Tag eliminado con éxito.
+        "404":
+          description: Tag no encontrado.
+
+  /posts:
+    post:
+      tags:
+        - Posts
+      summary: Crear Post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                userNickname:
+                  type: string
+              example:
+                description: Hola Mundo
+                userNickname: juan
+      responses:
+        "201":
+          description: Post creado con éxito.
+    get:
+      tags:
+        - Posts
+      summary: Obtener Posts
+      responses:
+        "200":
+          description: Lista de posts obtenida con éxito.
+
+  /posts/{id}:
+    get:
+      tags:
+        - Posts
+      summary: Obtener Post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Post encontrado.
+        "404":
+          description: Post no encontrado.
+    put:
+      tags:
+        - Posts
+      summary: Editar Post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+              example:
+                description: Informatica
+      responses:
+        "200":
+          description: Post editado con éxito.
+        "404":
+          description: Post no encontrado.
+    delete:
+      tags:
+        - Posts
+      summary: Eliminar Post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Post eliminado con éxito.
+        "404":
+          description: Post no encontrado.
+
+  /posts/{id}/images:
+    post:
+      tags:
+        - Posts
+      summary: Agregar Imagenes
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url:
+                  type: string
+              example:
+                url: "https://unsplash.com"
+      responses:
+        "201":
+          description: Imagen agregada con éxito.
+    get:
+      tags:
+        - Posts
+      summary: Obtener Imagenes
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Lista de imágenes obtenida con éxito.
+
+  /posts/{id}/images/{imageId}:
+    delete:
+      tags:
+        - Posts
+      summary: Eliminar Imagen
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: imageId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Imagen eliminada con éxito.
+        "404":
+          description: Imagen no encontrada.
+
+  /posts/{id}/tags:
+    post:
+      tags:
+        - Posts
+      summary: Asignar Tags
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tagsIds:
+                  type: array
+                  items:
+                    type: integer
+              example:
+                tagsIds:
+                  - 1
+                  - 2
+      responses:
+        "200":
+          description: Tags asignados con éxito.
+
+  /posts/{id}/tags/{tagId}:
+    post:
+      tags:
+        - Posts
+      summary: Asociar Tag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: tagId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Tag asociado con éxito.
+    delete:
+      tags:
+        - Posts
+      summary: Desasociar Tag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: tagId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Tag desasociado con éxito.
+
+  /comments:
+    post:
+      tags:
+        - Comments
+      summary: Crear Comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                userId:
+                  type: integer
+                postId:
+                  type: integer
+              example:
+                content: "Muy bueno!"
+                userId: 1
+                postId: 1
+      responses:
+        "201":
+          description: Comentario creado con éxito.
+    get:
+      tags:
+        - Comments
+      summary: Obtener Comments
+      responses:
+        "200":
+          description: Lista de comentarios obtenida con éxito.
+
+  /comments/{id}:
+    put:
+      tags:
+        - Comments
+      summary: Actualizar Comment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID del comentario a modificar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+              example:
+                content: "Me sirvió un montón"
+      responses:
+        "200":
+          description: Comentario actualizado con éxito.
+        "404":
+          description: Comentario no encontrado.
+        "500":
+          description: Error interno del servidor.
+
+    delete:
+      tags:
+        - Comments
+      summary: Eliminar Comment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID del comentario a eliminar
+      responses:
+        "200":
+          description: Comentario eliminado con éxito.
+        "404":
+          description: Comentario no encontrado.
+        "500":
+          description: Error interno del servidor.
