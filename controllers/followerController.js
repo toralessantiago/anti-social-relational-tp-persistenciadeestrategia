@@ -1,9 +1,15 @@
 const { User } = require("../models");
 
-//FOLLOW USER
+// FOLLOW USER
 const followUser = async (req, res) => {
   try {
     const { userId, targetId } = req.params;
+
+    if (userId === targetId) {
+      return res.status(400).json({
+        error: "Un usuario no puede seguirse a sí mismo",
+      });
+    }
 
     const user = await User.findByPk(userId);
     const targetUser = await User.findByPk(targetId);
@@ -14,19 +20,27 @@ const followUser = async (req, res) => {
       });
     }
 
+    const alreadyFollowing = await user.hasFollowing(targetUser);
+
+    if (alreadyFollowing) {
+      return res.status(400).json({
+        error: "Ya sigues a este usuario",
+      });
+    }
+
     await user.addFollowing(targetUser);
 
-    res.json({
+    return res.json({
       message: "Usuario seguido correctamente",
     });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       error: "Error al seguir usuario",
     });
   }
 };
 
-//UNFOLLOW USER
+// UNFOLLOW USER
 const unfollowUser = async (req, res) => {
   try {
     const { userId, targetId } = req.params;
@@ -40,19 +54,27 @@ const unfollowUser = async (req, res) => {
       });
     }
 
+    const isFollowing = await user.hasFollowing(targetUser);
+
+    if (!isFollowing) {
+      return res.status(400).json({
+        error: "No sigues a este usuario",
+      });
+    }
+
     await user.removeFollowing(targetUser);
 
-    res.json({
+    return res.json({
       message: "Usuario dejado de seguir",
     });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       error: "Error al dejar de seguir usuario",
     });
   }
 };
 
-// GET FOLLOWERS (seguidores)
+// GET FOLLOWERS
 const getFollowers = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.userId);
@@ -68,15 +90,17 @@ const getFollowers = async (req, res) => {
       joinTableAttributes: [],
     });
 
-    res.json(followers);
+    return res.json({
+      data: followers,
+    });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       error: "Error al obtener followers",
     });
   }
 };
 
-// GET FOLLOWING (seguidos)
+// GET FOLLOWING
 const getFollowing = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.userId);
@@ -92,9 +116,11 @@ const getFollowing = async (req, res) => {
       joinTableAttributes: [],
     });
 
-    res.json(following);
+    return res.json({
+      data: following,
+    });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       error: "Error al obtener following",
     });
   }

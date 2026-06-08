@@ -1,24 +1,35 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Follow extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      
-    }
+    static associate(models) {}
   }
-  Follow.init({
-    followerId: {type:DataTypes.INTEGER, allowNull:false},
-    followingId: {type:DataTypes.INTEGER, allowNull:false}
-  }, {
-    sequelize,
-    modelName: 'Follow',
-  });
+
+  Follow.init(
+    {
+      followerId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      followingId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    {
+      sequelize,
+      modelName: 'Follow',
+
+      // evita duplicados
+      indexes: [
+        {
+          unique: true,
+          fields: ['followerId', 'followingId'],
+        },
+      ],
+    }
+  );
+
   return Follow;
 };
