@@ -1,19 +1,19 @@
 const { Comment, User, Post } = require("../models");
-const { Op } = require('sequelize');
+const { Op } = require("sequelize");
 
 const obtenerComentarios = async (req, res) => {
   try {
     await Comment.update(
       { visible: false },
-      { where: { createdAt: { [Op.lt]: req.cutoffDate } } }
-    )
+      { where: { createdAt: { [Op.lt]: req.cutoffDate } } },
+    );
 
     const comentarios = await Comment.findAll({
-      where: { visible: true }, 
+      where: { visible: true },
       attributes: ["id", "content", "userId", "postId"],
       include: [
-        { model: User, as: "user", attributes: ['nickName', 'email'] },
-        { model: Post, as: "post", attributes: ['id', 'descripcion'] },
+        { model: User, as: "user", attributes: ["nickName", "email"] },
+        { model: Post, as: "post", attributes: ["id", "description"] },
       ],
     });
     res.status(200).json(comentarios);
@@ -21,7 +21,6 @@ const obtenerComentarios = async (req, res) => {
     res.status(500).json({ error: "Error al obtener comentarios." });
   }
 };
-
 
 const crearComentario = async (req, res) => {
   try {
@@ -32,11 +31,11 @@ const crearComentario = async (req, res) => {
       userId,
       postId,
       visible: true,
-      createdAt
+      createdAt,
     });
     res.status(201).json(comentario);
-    } catch (error) {
-        res.status(500).json({ error: "Error al crear el comentario." });
+  } catch (error) {
+    res.status(500).json({ error: "Error al crear el comentario." });
   }
 };
 
@@ -47,9 +46,9 @@ const actualizarComentario = async (req, res) => {
     const comentario = req.comentario;
     await comentario.update({ content });
     res.status(200).json(comentario);
-    } catch (error) {
-        res.status(500).json({
-          error: "Error al actualizar el comentario",
+  } catch (error) {
+    res.status(500).json({
+      error: "Error al actualizar el comentario",
     });
   }
 };
@@ -61,17 +60,16 @@ const eliminarComentario = async (req, res) => {
     res.status(200).json({
       message: "Comentario eliminado correctamente",
     });
-    } catch (error) {
-        res.status(500).json({
-            error: "Error al eliminar el comentario",
-      });
-    }
+  } catch (error) {
+    res.status(500).json({
+      error: "Error al eliminar el comentario",
+    });
+  }
 };
-
 
 module.exports = {
   obtenerComentarios,
   crearComentario,
   actualizarComentario,
-  eliminarComentario
+  eliminarComentario,
 };

@@ -8,1114 +8,6 @@
   },
   "item": [
     {
-      "name": "Tags",
-      "item": [
-        {
-          "name": "Crear Tag",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"name\": \"deportes\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/tags",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "tags"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "Éxito - Tag creado",
-              "originalRequest": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"vacaciones\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags"
-                  ]
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "106",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"6a-niHjWP9j2Yik1EjHOoHarSzGG1I\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:13:46 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"name\": \"vacaciones\",\n    \"updatedAt\": \"2026-06-02T03:13:46.150Z\",\n    \"createdAt\": \"2026-06-02T03:13:46.150Z\"\n}"
-            },
-            {
-              "name": "Error - Nombre obligatorio",
-              "originalRequest": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "36",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"24-wbb66DKFd7+WRTkCkc1Modo8WQM\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:19:29 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"error\": \"El nombre es obligatorio\"\n}"
-            },
-            {
-              "name": "Error - Nombre muy corto",
-              "originalRequest": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"a\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "54",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"36-njuzEt9RrOCXKIhBd8R2wssZ6a8\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:32:23 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"error\": \"El nombre debe tener al menos 2 caracteres\"\n}"
-            },
-            {
-              "name": "Error - Tag duplicado",
-              "originalRequest": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"vacaciones\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "30",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"1e-A6Gjw56IZvLRZhVFia35iy6kLGY\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:33:21 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"El tag ya existe\"\n}"
-            }
-          ]
-        },
-        {
-          "name": "Obtener Tags",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:3000/tags",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "tags"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "Éxito - Tags listado",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "79",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"4f-crnvjGKMq2MoOt/wuv+0ftx09+s\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 20:15:36 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"vacaciones\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"música\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"cine\"\n    }\n]"
-            }
-          ]
-        },
-        {
-          "name": "Obtener Tag",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:3000/tags/1",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "tags",
-                "1"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "Éxito - Tag encontrado",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags/1",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "1"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "106",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"6a-yLNi6o3PhFZjp7UUVaRFOlNnYpU\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:44:50 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"name\": \"vacaciones\",\n    \"createdAt\": \"2026-06-02T03:13:46.150Z\",\n    \"updatedAt\": \"2026-06-02T03:13:46.150Z\"\n}"
-            },
-            {
-              "name": "Error - Tag no encontrado",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags/99",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "99"
-                  ]
-                }
-              },
-              "status": "Not Found",
-              "code": 404,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "31",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:49:27 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
-            },
-            {
-              "name": "Error - ID inválido",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags/hola",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "hola"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "46",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"2e-jxf+U2VnrLAD5DZNsnlVyCeDBvM\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:52:01 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"El id del tag debe ser numérico\"\n}"
-            }
-          ]
-        },
-        {
-          "name": "Actualizar Tag",
-          "request": {
-            "method": "PUT",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"name\": \"cine\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "http://localhost:3000/tags/1",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "tags",
-                "1"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "Éxito - Tag actualizado",
-              "originalRequest": {
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"cine\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags/1",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "1"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "100",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"64-l1JMb1vaEKzCusAr6pb6hhY3VPg\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 03:58:56 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"name\": \"cine\",\n    \"createdAt\": \"2026-06-02T03:13:46.150Z\",\n    \"updatedAt\": \"2026-06-02T03:58:56.069Z\"\n}"
-            },
-            {
-              "name": "Error - Tag no encontrado",
-              "originalRequest": {
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"deportes\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags/99",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "99"
-                  ]
-                }
-              },
-              "status": "Not Found",
-              "code": 404,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "31",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 04:02:58 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
-            },
-            {
-              "name": "Error - Nombre muy corto",
-              "originalRequest": {
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"a\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags/1",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "1"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "54",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"36-njuzEt9RrOCXKIhBd8R2wssZ6a8\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 04:04:57 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"error\": \"El nombre debe tener al menos 2 caracteres\"\n}"
-            },
-            {
-              "name": "Error - Tag duplicado",
-              "originalRequest": {
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n    \"name\": \"música\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/tags/1",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "1"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "30",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"1e-A6Gjw56IZvLRZhVFia35iy6kLGY\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 04:08:04 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"El tag ya existe\"\n}"
-            }
-          ]
-        },
-        {
-          "name": "Eliminar Tag",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "url": {
-              "raw": "http://localhost:3000/tags/1",
-              "protocol": "http",
-              "host": [
-                "localhost"
-              ],
-              "port": "3000",
-              "path": [
-                "tags",
-                "1"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "Éxito - Tag eliminado",
-              "originalRequest": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags/3",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "3"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "41",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"29-a5LxDOXDzWjWTSvF7QqhrSJRr7I\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 04:13:02 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"Tag eliminado correctamente\"\n}"
-            },
-            {
-              "name": "Error - Tag no encontrado",
-              "originalRequest": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags/3",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "3"
-                  ]
-                }
-              },
-              "status": "Not Found",
-              "code": 404,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "31",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 04:15:52 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
-            },
-            {
-              "name": "Error - ID inválido",
-              "originalRequest": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/tags/hola",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "tags",
-                    "hola"
-                  ]
-                }
-              },
-              "status": "Bad Request",
-              "code": 400,
-              "_postman_previewlanguage": "JSON",
-              "header": [
-                {
-                  "key": "X-Powered-By",
-                  "value": "Express",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json; charset=utf-8",
-                  "type": "text"
-                },
-                {
-                  "key": "Content-Length",
-                  "value": "46",
-                  "type": "text"
-                },
-                {
-                  "key": "ETag",
-                  "value": "W/\"2e-jxf+U2VnrLAD5DZNsnlVyCeDBvM\"",
-                  "type": "text"
-                },
-                {
-                  "key": "Date",
-                  "value": "Tue, 02 Jun 2026 04:18:43 GMT",
-                  "type": "text"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "type": "text"
-                },
-                {
-                  "key": "Keep-Alive",
-                  "value": "timeout=5",
-                  "type": "text"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"El id del tag debe ser numérico\"\n}"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Users",
       "item": [
         {
@@ -1135,13 +27,9 @@
             "url": {
               "raw": "http://localhost:3000/users",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "users"
-              ]
+              "path": ["users"]
             }
           },
           "response": [
@@ -1162,13 +50,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users"
-                  ]
+                  "path": ["users"]
                 }
               },
               "status": "Created",
@@ -1231,13 +115,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users"
-                  ]
+                  "path": ["users"]
                 }
               },
               "status": "Bad Request",
@@ -1300,13 +180,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users"
-                  ]
+                  "path": ["users"]
                 }
               },
               "status": "Bad Request",
@@ -1362,13 +238,9 @@
             "url": {
               "raw": "http://localhost:3000/users",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "users"
-              ]
+              "path": ["users"]
             }
           },
           "response": [
@@ -1380,13 +252,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users"
-                  ]
+                  "path": ["users"]
                 }
               },
               "status": "OK",
@@ -1442,14 +310,9 @@
             "url": {
               "raw": "http://localhost:3000/users/2",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "users",
-                "2"
-              ]
+              "path": ["users", "2"]
             }
           },
           "response": [
@@ -1461,14 +324,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/2",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "2"
-                  ]
+                  "path": ["users", "2"]
                 }
               },
               "status": "OK",
@@ -1522,14 +380,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "99"
-                  ]
+                  "path": ["users", "99"]
                 }
               },
               "status": "Not Found",
@@ -1583,14 +436,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/hola",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "hola"
-                  ]
+                  "path": ["users", "hola"]
                 }
               },
               "status": "Not Found",
@@ -1655,14 +503,9 @@
             "url": {
               "raw": "http://localhost:3000/users/2",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "users",
-                "2"
-              ]
+              "path": ["users", "2"]
             }
           },
           "response": [
@@ -1683,14 +526,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/7",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "7"
-                  ]
+                  "path": ["users", "7"]
                 }
               },
               "status": "OK",
@@ -1753,14 +591,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "99"
-                  ]
+                  "path": ["users", "99"]
                 }
               },
               "status": "Not Found",
@@ -1816,14 +649,9 @@
             "url": {
               "raw": "http://localhost:3000/users/7",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "users",
-                "7"
-              ]
+              "path": ["users", "7"]
             }
           },
           "response": [
@@ -1835,14 +663,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "99"
-                  ]
+                  "path": ["users", "99"]
                 }
               },
               "status": "Not Found",
@@ -1896,14 +719,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/hola",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "hola"
-                  ]
+                  "path": ["users", "hola"]
                 }
               },
               "status": "Not Found",
@@ -1957,14 +775,9 @@
                 "url": {
                   "raw": "http://localhost:3000/users/7",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "users",
-                    "7"
-                  ]
+                  "path": ["users", "7"]
                 }
               },
               "status": "OK",
@@ -2025,15 +838,9 @@
             "url": {
               "raw": "http://localhost:3000/followers/4/5",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "followers",
-                "4",
-                "5"
-              ]
+              "path": ["followers", "4", "5"]
             }
           },
           "response": [
@@ -2045,15 +852,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/5",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "4",
-                    "5"
-                  ]
+                  "path": ["followers", "4", "5"]
                 }
               },
               "status": "OK",
@@ -2107,15 +908,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "4",
-                    "99"
-                  ]
+                  "path": ["followers", "4", "99"]
                 }
               },
               "status": "Not Found",
@@ -2169,15 +964,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/hola",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "4",
-                    "hola"
-                  ]
+                  "path": ["followers", "4", "hola"]
                 }
               },
               "status": "Not Found",
@@ -2233,14 +1022,9 @@
             "url": {
               "raw": "http://localhost:3000/followers/3",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "followers",
-                "3"
-              ]
+              "path": ["followers", "3"]
             }
           },
           "response": [
@@ -2252,14 +1036,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/3",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "3"
-                  ]
+                  "path": ["followers", "3"]
                 }
               },
               "status": "OK",
@@ -2313,14 +1092,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "99"
-                  ]
+                  "path": ["followers", "99"]
                 }
               },
               "status": "Not Found",
@@ -2376,15 +1150,9 @@
             "url": {
               "raw": "http://localhost:3000/followers/following/2",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "followers",
-                "following",
-                "2"
-              ]
+              "path": ["followers", "following", "2"]
             }
           },
           "response": [
@@ -2396,15 +1164,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/following/2",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "following",
-                    "2"
-                  ]
+                  "path": ["followers", "following", "2"]
                 }
               },
               "status": "OK",
@@ -2458,15 +1220,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/following/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "following",
-                    "99"
-                  ]
+                  "path": ["followers", "following", "99"]
                 }
               },
               "status": "Not Found",
@@ -2522,15 +1278,9 @@
             "url": {
               "raw": "http://localhost:3000/followers/4/5",
               "protocol": "http",
-              "host": [
-                "localhost"
-              ],
+              "host": ["localhost"],
               "port": "3000",
-              "path": [
-                "followers",
-                "4",
-                "5"
-              ]
+              "path": ["followers", "4", "5"]
             }
           },
           "response": [
@@ -2542,15 +1292,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/99",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "4",
-                    "99"
-                  ]
+                  "path": ["followers", "4", "99"]
                 }
               },
               "status": "Not Found",
@@ -2604,15 +1348,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/hola",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "4",
-                    "hola"
-                  ]
+                  "path": ["followers", "4", "hola"]
                 }
               },
               "status": "Not Found",
@@ -2666,15 +1404,9 @@
                 "url": {
                   "raw": "http://localhost:3000/followers/4/5",
                   "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
+                  "host": ["localhost"],
                   "port": "3000",
-                  "path": [
-                    "followers",
-                    "4",
-                    "5"
-                  ]
+                  "path": ["followers", "4", "5"]
                 }
               },
               "status": "OK",
@@ -2719,6 +1451,3244 @@
               ],
               "cookie": [],
               "body": "{\n    \"message\": \"Usuario dejado de seguir\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tags",
+      "item": [
+        {
+          "name": "Crear Tag",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"backend\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/tags",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tags"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Tag creado",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"vacaciones\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "106",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"6a-niHjWP9j2Yik1EjHOoHarSzGG1I\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:13:46 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"name\": \"vacaciones\",\n    \"updatedAt\": \"2026-06-02T03:13:46.150Z\",\n    \"createdAt\": \"2026-06-02T03:13:46.150Z\"\n}"
+            },
+            {
+              "name": "Error - Nombre obligatorio",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "36",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"24-wbb66DKFd7+WRTkCkc1Modo8WQM\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:19:29 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"El nombre es obligatorio\"\n}"
+            },
+            {
+              "name": "Error - Nombre muy corto",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"a\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "54",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"36-njuzEt9RrOCXKIhBd8R2wssZ6a8\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:32:23 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"El nombre debe tener al menos 2 caracteres\"\n}"
+            },
+            {
+              "name": "Error - Tag duplicado",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"vacaciones\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e-A6Gjw56IZvLRZhVFia35iy6kLGY\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:33:21 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El tag ya existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tags",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tags"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Tags listado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "79",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4f-crnvjGKMq2MoOt/wuv+0ftx09+s\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 20:15:36 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"name\": \"vacaciones\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"música\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"cine\"\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Tag",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tags/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tags", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Tag encontrado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "106",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"6a-yLNi6o3PhFZjp7UUVaRFOlNnYpU\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:44:50 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"name\": \"vacaciones\",\n    \"createdAt\": \"2026-06-02T03:13:46.150Z\",\n    \"updatedAt\": \"2026-06-02T03:13:46.150Z\"\n}"
+            },
+            {
+              "name": "Error - Tag no encontrado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "31",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:49:27 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
+            },
+            {
+              "name": "Error - ID inválido",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags/hola",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "hola"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "46",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2e-jxf+U2VnrLAD5DZNsnlVyCeDBvM\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:52:01 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El id del tag debe ser numérico\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Actualizar Tag",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"cine\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/tags/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tags", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Tag actualizado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"cine\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "100",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"64-l1JMb1vaEKzCusAr6pb6hhY3VPg\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 03:58:56 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"name\": \"cine\",\n    \"createdAt\": \"2026-06-02T03:13:46.150Z\",\n    \"updatedAt\": \"2026-06-02T03:58:56.069Z\"\n}"
+            },
+            {
+              "name": "Error - Tag no encontrado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"deportes\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "31",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 04:02:58 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
+            },
+            {
+              "name": "Error - Nombre muy corto",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"a\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "1"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "54",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"36-njuzEt9RrOCXKIhBd8R2wssZ6a8\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 04:04:57 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"El nombre debe tener al menos 2 caracteres\"\n}"
+            },
+            {
+              "name": "Error - Tag duplicado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"música\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/tags/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "1"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e-A6Gjw56IZvLRZhVFia35iy6kLGY\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 04:08:04 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El tag ya existe\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Eliminar Tag",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/tags/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["tags", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Tag eliminado",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags/3",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "3"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "41",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"29-a5LxDOXDzWjWTSvF7QqhrSJRr7I\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 04:13:02 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Tag eliminado correctamente\"\n}"
+            },
+            {
+              "name": "Error - Tag no encontrado",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags/3",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "3"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "31",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 04:15:52 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
+            },
+            {
+              "name": "Error - ID inválido",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/tags/hola",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["tags", "hola"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "46",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2e-jxf+U2VnrLAD5DZNsnlVyCeDBvM\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 02 Jun 2026 04:18:43 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"El id del tag debe ser numérico\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Images",
+          "item": [
+            {
+              "name": "Agregar Imagenes",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/posts/1/images",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1", "images"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Éxito - Imagen agregada",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/images",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "images"]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "219",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"db-oGQxswFN6Fzmv8I73JV7S8xlBGw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 14:33:13 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"id\": 1,\n    \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n    \"postId\": 1,\n    \"updatedAt\": \"2026-06-08T14:33:13.837Z\",\n    \"createdAt\": \"2026-06-08T14:33:13.837Z\"\n}"
+                },
+                {
+                  "name": "Error - URL obligatoria",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"url\": \"\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/images",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "images"]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "46",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2e-eF1tzKBVqIPjrZuJQi9PNhlSnRY\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 14:35:15 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"\\\"url\\\" is not allowed to be empty\"\n}"
+                },
+                {
+                  "name": "Error - Post no encontrado",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:3000/posts/99/images",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "99", "images"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "30",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 14:37:59 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Obtener Imagenes",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/1/images",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1", "images"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Éxito - Imagen encontrada",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/images",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "images"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "221",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"dd-m/Wt5th628ie8tc5T3lAq3pzZJU\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 14:46:23 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n    {\n        \"id\": 1,\n        \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n        \"postId\": 1,\n        \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n        \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n    }\n]"
+                },
+                {
+                  "name": "Error - Post no encontrado",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/99/images",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "99", "images"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "30",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 14:47:33 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Eliminar Imagen",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/1/images/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1", "images", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Error - Post no encontrado",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/99/images/1",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "99", "images", "1"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "30",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 15:47:32 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+                },
+                {
+                  "name": "Error - Imagen no encontrada",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/images/99",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "images", "99"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "32",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"20-ZaShRE3e+keUo7lWeWrCiY3EYEg\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 15:49:01 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Imagen no encontrada\"\n}"
+                },
+                {
+                  "name": "Éxito - Imagen eliminada",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/images/1",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "images", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "39",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"27-+yrx94F1aQ1KbpqZYmk/HxFu94I\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 15:49:52 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Imagen del post eliminada\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tags",
+          "item": [
+            {
+              "name": "Asignar Tags",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"tagsIds\": [1, 2]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/posts/1/tags",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1", "tags"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Éxito - Tags asignados",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"tagsIds\": [1, 2]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/tags",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "tags"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "50",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"32-Ml+yMgKKkUx7bUDMoZut1QVMSXE\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:05:35 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Tags asignados al post correctamente\"\n}"
+                },
+                {
+                  "name": "Error - Post no encontrado",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"tagsIds\": [1, 2]\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "http://localhost:3000/posts/99/tags",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "99", "tags"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "30",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:09:01 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Asociar Tag",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/1/tags/3",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1", "tags", "3"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Éxito - Tag asociado",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/tags/3",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "tags", "3"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "48",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"30-FWF5cfeT2Ib6K1Hzp41pfhwdj+A\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:18:24 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Tag asociado al post correctamente\"\n}"
+                },
+                {
+                  "name": "Error - Post no encontrado",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/99/tags/3",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "99", "tags", "3"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "30",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:20:15 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+                },
+                {
+                  "name": "Error - Tag no encontrado",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/tags/99",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "tags", "99"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "31",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:21:01 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Desasociar Tag",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/1/tags/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1", "tags", "1"]
+                }
+              },
+              "response": [
+                {
+                  "name": "Error - Post no encontrado",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/99/tags/1",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "99", "tags", "1"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "30",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:27:41 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+                },
+                {
+                  "name": "Error - Tag no encontrado",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/tags/99",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "tags", "99"]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "31",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1f-uHEDHUfVPQpMM18UETqMXg1qpkk\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:28:45 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Tag no encontrado\"\n}"
+                },
+                {
+                  "name": "Éxito - Tag desasociado",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "http://localhost:3000/posts/1/tags/1",
+                      "protocol": "http",
+                      "host": ["localhost"],
+                      "port": "3000",
+                      "path": ["posts", "1", "tags", "1"]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "JSON",
+                  "header": [
+                    {
+                      "key": "X-Powered-By",
+                      "value": "Express",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "43",
+                      "type": "text"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"2b-WqbGo+ExeFnbLRttmID0QnoYIX8\"",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 08 Jun 2026 16:29:38 GMT",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive",
+                      "type": "text"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5",
+                      "type": "text"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"message\": \"Tag desasociado correctamente\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Crear Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/posts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["posts"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Post creado",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/posts",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "135",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"87-ue45ZzXMjvFP4GJ/ZvPtUwgUGEI\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 14:16:27 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\",\n    \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\"\n}"
+            },
+            {
+              "name": "Error - Descripcion obligatoria",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userNickname\": \"juan\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/posts",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "39",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"27-U0bxsyynoEJYiGRA+mgABNjDlk8\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 14:21:12 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"\\\"description\\\" is required\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/posts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["posts"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Posts listado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1097",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"449-UNKVJSIgJ6tixb6F6O0qL3k3H2U\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 14:53:30 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Hola Mundo\",\n        \"userNickname\": \"juan\",\n        \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n        \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n        \"postImages\": [\n            {\n                \"id\": 1,\n                \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n                \"postId\": 1,\n                \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n                \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n            }\n        ],\n        \"tags\": []\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Buenos dias!\",\n        \"userNickname\": \"maria123\",\n        \"createdAt\": \"2026-06-08T14:27:23.740Z\",\n        \"updatedAt\": \"2026-06-08T14:27:23.740Z\",\n        \"postImages\": [\n            {\n                \"id\": 2,\n                \"url\": \"https://unsplash.com/es/fotos/silueta-de-montanas-bajo-cielo-naranja-0x6RTts1jRU\",\n                \"postId\": 2,\n                \"createdAt\": \"2026-06-08T14:43:40.635Z\",\n                \"updatedAt\": \"2026-06-08T14:43:40.635Z\"\n            }\n        ],\n        \"tags\": []\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Buenas noches!\",\n        \"userNickname\": \"maria123\",\n        \"createdAt\": \"2026-06-08T14:27:52.800Z\",\n        \"updatedAt\": \"2026-06-08T14:27:52.800Z\",\n        \"postImages\": [\n            {\n                \"id\": 3,\n                \"url\": \"https://unsplash.com/es/fotos/via-lactea-sobre-paisaje-montanoso-de-noche-L95xDkSSuWw\",\n                \"postId\": 3,\n                \"createdAt\": \"2026-06-08T14:44:31.914Z\",\n                \"updatedAt\": \"2026-06-08T14:44:31.914Z\"\n            }\n        ],\n        \"tags\": []\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/posts/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["posts", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Post encontrado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "380",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"17c-iv2BqdmyupVq7C/ciYNlDgbmdHk\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 15:02:50 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n    \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n    \"postImages\": [\n        {\n            \"id\": 1,\n            \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n            \"postId\": 1,\n            \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n            \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n        }\n    ],\n    \"tags\": []\n}"
+            },
+            {
+              "name": "Error - Post no encontrado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 15:04:01 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Editar Post",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"description\": \"Informatica\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/posts/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["posts", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Post actualizado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"description\": \"Informatica\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/posts/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "136",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"88-RrZpdRnt6W4F1jfut5W24tqHtpo\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 15:10:39 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"description\": \"Informatica\",\n    \"userNickname\": \"juan\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n    \"updatedAt\": \"2026-06-08T15:10:39.737Z\"\n}"
+            },
+            {
+              "name": "Error - Post no encontrado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"description\": \"Informatica\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/posts/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 15:12:50 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Eliminar Post",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/posts/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["posts", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Error - Post no encontrado",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e-6sFxVZVKfrIXwvIKk9k8JNXJ2Cw\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 15:52:00 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"Post no encontrado\"\n}"
+            },
+            {
+              "name": "Éxito - Post eliminado",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/posts/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["posts", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "28",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1c-s7K1C8LCfLsfFcWjiIBVhVghNso\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 15:52:43 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Post eliminado\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "Crear Comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"content\": \"Muy bueno!\",\n    \"userId\": 1,\n    \"postId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["comments"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Comentario creado",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"content\": \"Muy bueno!\",\n    \"userId\": 1,\n    \"postId\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/comments",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "146",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"92-j4QPCZuTYnjCMkC95Yxf3M1cpk0\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 17:46:08 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"content\": \"Muy bueno!\",\n    \"userId\": 1,\n    \"postId\": 1,\n    \"visible\": true,\n    \"createdAt\": \"2026-06-08T17:46:08.521Z\",\n    \"updatedAt\": \"2026-06-08T17:46:08.521Z\"\n}"
+            },
+            {
+              "name": "Error - Contenido obligatorio",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"content\": \"\",\n    \"userId\": 1,\n    \"postId\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/comments",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "46",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2e-lmgalfRbWBByyfkBSxMaZMGAwqI\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 17:47:57 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"error\": \"El contenido no puede estar vacío\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comments",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["comments"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Comentarios listado",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/comments",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "155",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"9b-+moRJjLstLSSEP5mHXEfNVwlPEk\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 17:54:27 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"id\": 1,\n        \"content\": \"Muy bueno!\",\n        \"userId\": 1,\n        \"postId\": 1,\n        \"user\": {\n            \"nickName\": \"juan\",\n            \"email\": \"juanperez@gmail.com\"\n        },\n        \"post\": {\n            \"id\": 1,\n            \"description\": \"Hola Mundo\"\n        }\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Actualizar Comment",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"content\": \"Me sirvió un montón\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["comments", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Éxito - Comment actualizado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"Me sirvió un montón\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/comments/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "177",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b1-Ho0GiKJanrBTyrPB0RTaLLYubc0\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 18:02:00 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"content\": \"Me sirvió un montón\",\n    \"visible\": true,\n    \"userId\": 1,\n    \"postId\": 1,\n    \"createdAt\": \"2026-06-08T17:46:08.521Z\",\n    \"updatedAt\": \"2026-06-08T18:02:00.151Z\",\n    \"userNickname\": null\n}"
+            },
+            {
+              "name": "Error - Comment no encontrado",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"content\": \"Me sirvió un montón\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/comments/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "38",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"26-KTOWNWAxXh4pyF27YwtmQSLD4N8\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 18:03:17 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Comentario no encontrado\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Eliminar Comment",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comments/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["comments", "1"]
+            }
+          },
+          "response": [
+            {
+              "name": "Error - Comment no encontrado",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/comments/99",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments", "99"]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "38",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"26-KTOWNWAxXh4pyF27YwtmQSLD4N8\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 18:06:33 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Comentario no encontrado\"\n}"
+            },
+            {
+              "name": "Éxito - Comment eliminado",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/comments/1",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["comments", "1"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "JSON",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "48",
+                  "type": "text"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"30-3lutZ5ow7uHCRVIlnvwt/Y+KXeg\"",
+                  "type": "text"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 08 Jun 2026 18:07:25 GMT",
+                  "type": "text"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "type": "text"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5",
+                  "type": "text"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Comentario eliminado correctamente\"\n}"
             }
           ]
         }
