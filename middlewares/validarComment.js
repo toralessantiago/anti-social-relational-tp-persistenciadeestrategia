@@ -1,5 +1,6 @@
 const { Comment, User, Post } = require('../models')
 const commentSchema = require('../schemas/commentSchema')
+const updateCommentSchema = require('../schemas/updateCommentSchema')
 
 const validarComment = (req, res, next) => {
     const { error } = commentSchema.validate(req.body)
@@ -23,7 +24,20 @@ const validarCommentId = async (req, res, next) => {
     }
 }
 
+const validarUpdateComment = (req, res, next) => {
+    const { error } = updateCommentSchema.validate(req.body);
+
+    if (error) {
+        return res.status(400).json({
+            error: error.details[0].message
+        });
+    }
+
+    next();
+};
+
 module.exports = {
     validarComment,
-    validarCommentId
+    validarCommentId,
+    validarUpdateComment
 }
