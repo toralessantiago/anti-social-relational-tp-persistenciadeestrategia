@@ -6,11 +6,14 @@ const PORT = process.env.PORT || 3000;
 
 const routerUsers = require("./routes/userRoutes");
 const routerFollowers = require("./routes/followerRoutes");
+const routerComments = require("./routes/commentRoutes"); 
 
 app.use(express.json());
 
 app.use("/user", routerUsers);
 app.use("/followers", routerFollowers);
+app.use("/comments", routerComments);
+
 
 app.listen(PORT, async () => {
   await db.sequelize.sync();
