@@ -12,14 +12,22 @@ const routerPost = require("./routes/postsRoutes");
 
 app.use(express.json());
 
-app.use("/user", routerUsers);
-app.use("/follower", routerFollowers);
-app.use("/comment", routerComments);
-app.use("/post", routerPost);
-app.use("/tag", routerTag);
+app.use("/users", routerUsers);
+app.use("/followers", routerFollowers);
+app.use("/comments", routerComments);
+app.use("/posts", routerPost);
+app.use("/tags", routerTag);
 
 
 app.listen(PORT, async () => {
-  await db.sequelize.sync();
-  console.log(`Unahur - Anti-Social Net en http://localhost:${PORT}`);
+  try {
+    await db.sequelize.authenticate();
+    console.log("DB conectada");
+
+    await db.sequelize.sync();
+
+    console.log(`Servidor en http://localhost:${PORT}`);
+  } catch (err) {
+    console.error(err);
+  }
 });

@@ -10,10 +10,22 @@ const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+if (config.dialect === "sqlite") {
+  sequelize = new Sequelize({
+    dialect: "sqlite",
+    storage: config.storage
+  });
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    {
+      host: config.host,
+      port: config.port,
+      dialect: config.dialect
+    }
+  );
 }
 
 fs
@@ -27,7 +39,13 @@ fs
     );
   })
   .forEach(file => {
-    const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
+    console.log("Cargando:", file);
+
+    const model = require(path.join(__dirname, file))(
+      sequelize,
+      Sequelize.DataTypes
+    );
+
     db[model.name] = model;
   });
 
