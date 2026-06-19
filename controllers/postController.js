@@ -64,8 +64,8 @@ const getPostImages = async (req, res) => {
 const createPost = async (req, res) => {
   try {
     const nuevoPost = await Post.create({
-      description: req.body.description,
-      userNickname: req.body.userNickname,
+      descripcion: req.body.descripcion,
+      userId: req.body.userId,
     });
 
     res.status(201).json(nuevoPost);
@@ -91,7 +91,7 @@ const addImage = async (req, res) => {
 //PUT
 const updatePost = async (req, res) => {
   await req.post.update({
-    description: req.body.description,
+    descripcion: req.body.descripcion,
   });
 
   res.json(req.post);

@@ -1,5 +1,4 @@
 const { User } = require("../models");
-const userSchema = require("../schemas/userSchema");
 
 // GET USERS
 const getUsers = async (req, res) => {
@@ -46,11 +45,15 @@ const getUserById = async (req, res) => {
 // CREATE USER
 const createUser = async (req, res) => {
   try {
-    const { error } = userSchema.validate(req.body);
+    const existingUser = await User.findOne({
+      where: {
+        nickName: req.body.nickName,
+      },
+    });
 
-    if (error) {
+    if (existingUser) {
       return res.status(400).json({
-        error: error.details[0].message,
+        error: "El nickname ya existe.",
       });
     }
 
@@ -71,19 +74,9 @@ const createUser = async (req, res) => {
   }
 };
 
-//UPDATE USER
+// UPDATE USER
 const updateUser = async (req, res) => {
   try {
-    const { error } = userSchema.validate(req.body, {
-      presence: "optional",
-    });
-
-    if (error) {
-      return res.status(400).json({
-        error: error.details[0].message,
-      });
-    }
-
     const user = await User.findByPk(req.params.id);
 
     if (!user) {
@@ -122,6 +115,7 @@ const updateUser = async (req, res) => {
     });
   }
 };
+
 // DELETE USER
 const deleteUser = async (req, res) => {
   try {

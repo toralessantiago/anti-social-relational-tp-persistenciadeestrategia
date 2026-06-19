@@ -90,9 +90,7 @@ const getFollowers = async (req, res) => {
       joinTableAttributes: [],
     });
 
-    return res.json({
-      data: followers,
-    });
+    return res.json(followers);
   } catch (error) {
     return res.status(500).json({
       error: "Error al obtener followers",

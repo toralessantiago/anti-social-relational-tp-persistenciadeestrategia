@@ -3699,7 +3699,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\"\n}",
+              "raw": "{\n    \"description\": \"Hola Mundo\",\n    \"userId\": \"juan\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -3722,7 +3722,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\"\n}",
+                  "raw": "{\n    \"description\": \"Hola Mundo\",\n    \"userId\": \"juan\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -3778,7 +3778,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\",\n    \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\"\n}"
+              "body": "{\n    \"id\": 1,\n    \"description\": \"Hola Mundo\",\n    \"userId\": \"juan\",\n    \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\"\n}"
             },
             {
               "name": "Error - Descripcion obligatoria",
@@ -3787,7 +3787,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n    \"userNickname\": \"juan\"\n}",
+                  "raw": "{\n    \"userId\": \"juan\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -3915,7 +3915,7 @@
                 }
               ],
               "cookie": [],
-              "body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Hola Mundo\",\n        \"userNickname\": \"juan\",\n        \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n        \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n        \"postImages\": [\n            {\n                \"id\": 1,\n                \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n                \"postId\": 1,\n                \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n                \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n            }\n        ],\n        \"tags\": []\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Buenos dias!\",\n        \"userNickname\": \"maria123\",\n        \"createdAt\": \"2026-06-08T14:27:23.740Z\",\n        \"updatedAt\": \"2026-06-08T14:27:23.740Z\",\n        \"postImages\": [\n            {\n                \"id\": 2,\n                \"url\": \"https://unsplash.com/es/fotos/silueta-de-montanas-bajo-cielo-naranja-0x6RTts1jRU\",\n                \"postId\": 2,\n                \"createdAt\": \"2026-06-08T14:43:40.635Z\",\n                \"updatedAt\": \"2026-06-08T14:43:40.635Z\"\n            }\n        ],\n        \"tags\": []\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Buenas noches!\",\n        \"userNickname\": \"maria123\",\n        \"createdAt\": \"2026-06-08T14:27:52.800Z\",\n        \"updatedAt\": \"2026-06-08T14:27:52.800Z\",\n        \"postImages\": [\n            {\n                \"id\": 3,\n                \"url\": \"https://unsplash.com/es/fotos/via-lactea-sobre-paisaje-montanoso-de-noche-L95xDkSSuWw\",\n                \"postId\": 3,\n                \"createdAt\": \"2026-06-08T14:44:31.914Z\",\n                \"updatedAt\": \"2026-06-08T14:44:31.914Z\"\n            }\n        ],\n        \"tags\": []\n    }\n]"
+              "body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Hola Mundo\",\n        \"userId\": \"juan\",\n        \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n        \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n        \"postImages\": [\n            {\n                \"id\": 1,\n                \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n                \"postId\": 1,\n                \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n                \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n            }\n        ],\n        \"tags\": []\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Buenos dias!\",\n        \"userId\": \"maria123\",\n        \"createdAt\": \"2026-06-08T14:27:23.740Z\",\n        \"updatedAt\": \"2026-06-08T14:27:23.740Z\",\n        \"postImages\": [\n            {\n                \"id\": 2,\n                \"url\": \"https://unsplash.com/es/fotos/silueta-de-montanas-bajo-cielo-naranja-0x6RTts1jRU\",\n                \"postId\": 2,\n                \"createdAt\": \"2026-06-08T14:43:40.635Z\",\n                \"updatedAt\": \"2026-06-08T14:43:40.635Z\"\n            }\n        ],\n        \"tags\": []\n    },\n    {\n        \"id\": 3,\n        \"description\": \"Buenas noches!\",\n        \"userId\": \"maria123\",\n        \"createdAt\": \"2026-06-08T14:27:52.800Z\",\n        \"updatedAt\": \"2026-06-08T14:27:52.800Z\",\n        \"postImages\": [\n            {\n                \"id\": 3,\n                \"url\": \"https://unsplash.com/es/fotos/via-lactea-sobre-paisaje-montanoso-de-noche-L95xDkSSuWw\",\n                \"postId\": 3,\n                \"createdAt\": \"2026-06-08T14:44:31.914Z\",\n                \"updatedAt\": \"2026-06-08T14:44:31.914Z\"\n            }\n        ],\n        \"tags\": []\n    }\n]"
             }
           ]
         },
@@ -3995,7 +3995,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"description\": \"Hola Mundo\",\n    \"userNickname\": \"juan\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n    \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n    \"postImages\": [\n        {\n            \"id\": 1,\n            \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n            \"postId\": 1,\n            \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n            \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n        }\n    ],\n    \"tags\": []\n}"
+              "body": "{\n    \"id\": 1,\n    \"description\": \"Hola Mundo\",\n    \"userId\": \"juan\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n    \"updatedAt\": \"2026-06-08T14:16:27.053Z\",\n    \"postImages\": [\n        {\n            \"id\": 1,\n            \"url\": \"https://unsplash.com/es/fotos/un-macbook-con-lineas-de-codigo-en-su-pantalla-en-un-escritorio-ocupado-m_HRfLhgABo\",\n            \"postId\": 1,\n            \"createdAt\": \"2026-06-08T14:33:13.837Z\",\n            \"updatedAt\": \"2026-06-08T14:33:13.837Z\"\n        }\n    ],\n    \"tags\": []\n}"
             },
             {
               "name": "Error - Post no encontrado",
@@ -4149,7 +4149,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"description\": \"Informatica\",\n    \"userNickname\": \"juan\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n    \"updatedAt\": \"2026-06-08T15:10:39.737Z\"\n}"
+              "body": "{\n    \"id\": 1,\n    \"description\": \"Informatica\",\n    \"userId\": \"juan\",\n    \"createdAt\": \"2026-06-08T14:16:27.053Z\",\n    \"updatedAt\": \"2026-06-08T15:10:39.737Z\"\n}"
             },
             {
               "name": "Error - Post no encontrado",
@@ -4801,7 +4801,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"id\": 1,\n    \"content\": \"Me sirvió un montón\",\n    \"visible\": true,\n    \"userId\": 1,\n    \"postId\": 1,\n    \"createdAt\": \"2026-06-08T17:46:08.521Z\",\n    \"updatedAt\": \"2026-06-08T18:02:00.151Z\",\n    \"userNickname\": null\n}"
+              "body": "{\n    \"id\": 1,\n    \"content\": \"Me sirvió un montón\",\n    \"visible\": true,\n    \"userId\": 1,\n    \"postId\": 1,\n    \"createdAt\": \"2026-06-08T17:46:08.521Z\",\n    \"updatedAt\": \"2026-06-08T18:02:00.151Z\",\n    \"userId\": null\n}"
             },
             {
               "name": "Error - Comment no encontrado",

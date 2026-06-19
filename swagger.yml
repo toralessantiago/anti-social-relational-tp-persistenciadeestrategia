@@ -289,11 +289,11 @@ paths:
               properties:
                 description:
                   type: string
-                userNickname:
+                userId:
                   type: string
               example:
                 description: Hola Mundo
-                userNickname: juan
+                userId: juan
       responses:
         "201":
           description: Post creado con éxito.

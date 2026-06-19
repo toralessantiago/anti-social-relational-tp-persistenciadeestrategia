@@ -13,7 +13,7 @@ const obtenerComentarios = async (req, res) => {
       attributes: ["id", "content", "userId", "postId"],
       include: [
         { model: User, as: "user", attributes: ["nickName", "email"] },
-        { model: Post, as: "post", attributes: ["id", "description"] },
+        { model: Post, as: "post", attributes: ["id", "descripcion"] },
       ],
     });
     res.status(200).json(comentarios);

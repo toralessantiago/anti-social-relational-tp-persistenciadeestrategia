@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 
 const {
+  validarUser,
+  validarUserUpdate,
+} = require("../middlewares/validarUser");
+
+const {
   getUsers,
   getUserById,
   createUser,
@@ -9,15 +14,19 @@ const {
   deleteUser,
 } = require("../controllers/userController");
 
-//  CRUD USER
+// GET ALL USERS
 router.get("/", getUsers);
 
+// GET USER BY ID
 router.get("/:id", getUserById);
 
-router.post("/", createUser);
+// CREATE USER
+router.post("/", validarUser, createUser);
 
-router.put("/:id", updateUser);
+// UPDATE USER
+router.put("/:id", validarUserUpdate, updateUser);
 
+// DELETE USER
 router.delete("/:id", deleteUser);
 
 module.exports = router;
