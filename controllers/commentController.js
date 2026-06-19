@@ -41,11 +41,9 @@ const crearComentario = async (req, res) => {
 
 const actualizarComentario = async (req, res) => {
   try {
-    const { id } = req.params;
     const { content } = req.body;
-    const comentario = req.comentario;
-    await comentario.update({ content });
-    res.status(200).json(comentario);
+    await req.comentario.update({ content });
+    res.status(200).json(req.comentario);
   } catch (error) {
     res.status(500).json({
       error: "Error al actualizar el comentario",

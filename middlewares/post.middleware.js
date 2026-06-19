@@ -2,8 +2,7 @@ const postSchema = require("../schemas/post.schema")
 const imageSchema = require("../schemas/image.schema")
 const updatePostSchema = require("../schemas/updatePost.schema")
 const createPostSchema = require("../schemas/createPost.schema")
-const { Post } = require("../models")
-const { Post_Image} = require("../models")
+const { Post, Post_Image, User } = require("../models")
 
 
 const validatePost = (req, res, next) => {
@@ -34,16 +33,31 @@ const validatePostExists = async (req,res,next) => {
     next()
 }
 
-const validateCreatePost = (req,res,next) => {
-
+const validateCreatePost = async (req, res, next) => {
     const { error } = createPostSchema.validate(req.body)
 
-    if(error){
+    if (error) {
         return res.status(400).json({
             error: error.details[0].message
         })
     }
 
+    const { userId } = req.body
+    let user
+
+    if (typeof userId === "number") {
+        user = await User.findByPk(userId)
+    } else if (!Number.isNaN(Number(userId)) && String(userId).trim() !== "") {
+        user = await User.findByPk(Number(userId))
+    } else {
+        user = await User.findOne({ where: { nickName: userId } })
+    }
+
+    if (!user) {
+        return res.status(404).json({ error: "Usuario no encontrado" })
+    }
+
+    req.body.userId = user.id
     next()
 }
 

@@ -287,12 +287,15 @@ paths:
             schema:
               type: object
               properties:
-                description:
+                descripcion:
                   type: string
                 userId:
-                  type: string
+                  oneOf:
+                    - type: integer
+                    - type: string
+                  description: ID numérico del usuario o nickName
               example:
-                description: Hola Mundo
+                descripcion: Hola Mundo
                 userId: juan
       responses:
         "201":
@@ -338,10 +341,10 @@ paths:
             schema:
               type: object
               properties:
-                description:
+                descripcion:
                   type: string
               example:
-                description: Informatica
+                descripcion: Informatica
       responses:
         "200":
           description: Post editado con éxito.

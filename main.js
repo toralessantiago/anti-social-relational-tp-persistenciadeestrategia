@@ -1,21 +1,33 @@
+require("dotenv").config();
+
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const YAML = require("js-yaml");
+const swaggerUi = require("swagger-ui-express");
+
 const app = express();
 const db = require("./models");
-require("dotenv").config();
 const PORT = process.env.PORT || 3000;
+
+const storagePath = process.env.DB_STORAGE || "./data/data.sqlite";
+const dataDir = path.dirname(storagePath);
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
+
+const swaggerDocument = YAML.load(
+  fs.readFileSync(path.join(__dirname, "swagger.yml"), "utf8"),
+);
 
 const routerUsers = require("./routes/userRoutes");
 const routerFollowers = require("./routes/followerRoutes");
 const routerComments = require("./routes/commentRoutes");
 const routerTag = require("./routes/tagRoutes");
 const routerPost = require("./routes/postsRoutes");
-const swaggerUi = require("swagger-ui-express");
-const YAML = require("js-yaml");
-const fs = require("fs");
-const swaggerDocument = YAML.load(fs.readFileSync("./swagger.yml", "utf8"));
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use("/users", routerUsers);
 app.use("/followers", routerFollowers);
@@ -31,6 +43,7 @@ app.listen(PORT, async () => {
     await db.sequelize.sync();
 
     console.log(`Servidor en http://localhost:${PORT}`);
+    console.log(`Swagger en http://localhost:${PORT}/api-docs`);
   } catch (err) {
     console.error(err);
   }

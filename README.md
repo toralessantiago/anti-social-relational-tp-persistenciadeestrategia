@@ -42,7 +42,8 @@ Backend desarrollado para **UnaHur Anti-Social Net**, una red social inspirada e
 ├── config/
 ├── data/
 ├── swagger.yml
-├── app.js
+├── DER.md
+├── main.js
 ├── package.json
 └── .env
 ```
@@ -133,6 +134,8 @@ http://localhost:3000/api-docs
 ---
 
 # 🗄️ Modelo de datos
+
+El diagrama entidad-relación completo está documentado en [DER.md](./DER.md).
 
 ## User
 

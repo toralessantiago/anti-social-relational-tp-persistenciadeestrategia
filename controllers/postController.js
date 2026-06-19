@@ -5,6 +5,7 @@ const getPosts = async (req, res) => {
   try {
     const posts = await Post.findAll({
       include: [
+        { model: User, as: "user", attributes: ["id", "nickName"] },
         "postImages",
         {
           model: Tag,
@@ -29,6 +30,7 @@ const getPostId = async (req, res) => {
 
   const post = await Post.findByPk(id, {
     include: [
+      { model: User, as: "user", attributes: ["id", "nickName"] },
       "postImages",
       {
         model: Tag,
@@ -59,8 +61,6 @@ const getPostImages = async (req, res) => {
   res.json(images);
 };
 
-//POST(el nickname toma un numero no un nombre)
-// A corregir con mis compañeros(no tocar)
 const createPost = async (req, res) => {
   try {
     const nuevoPost = await Post.create({
@@ -70,8 +70,6 @@ const createPost = async (req, res) => {
 
     res.status(201).json(nuevoPost);
   } catch (error) {
-    console.log(error);
-
     res.status(500).json({
       error: error.message,
     });
