@@ -1,82 +1,526 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/I9P6ejM-)
-# Red Anti-Social
+# 🚀 UnaHur Anti-Social Net - Backend API
 
-Se solicita el modelado y desarrollo de un sistema backend para una red social llamada **“UnaHur Anti-Social Net”**, inspirada en plataformas populares que permiten a los usuarios realizar publicaciones y recibir comentarios sobre las mismas.
+Backend desarrollado para **UnaHur Anti-Social Net**, una red social inspirada en plataformas modernas que permite la gestión de usuarios, publicaciones, comentarios, seguidores y etiquetas.
 
-![Imagen](./assets/ANTI-SOCIALNET.jpeg)
+## 📋 Características
 
-# Contexto del Proyecto
+- Gestión de usuarios.
+- Creación y administración de publicaciones.
+- Asociación de imágenes a publicaciones.
+- Sistema de comentarios.
+- Sistema de seguidores (Followers/Following).
+- Gestión de etiquetas (Tags).
+- Asociación de Tags a publicaciones.
+- Validación de datos mediante Joi.
+- Documentación de API mediante Swagger.
+- Persistencia de datos utilizando Sequelize ORM.
 
-En una primera reunión con los sponsors del proyecto, se definieron los siguientes requerimientos para el desarrollo de un **MVP (Producto Mínimo Viable)**:
+---
 
-- El sistema debe permitir que un usuario registrado realice una publicación (post), incluyendo **obligatoriamente una descripción**. De forma opcional, se podrán asociar **una o más imágenes** a dicha publicación.
+# 🛠️ Tecnologías utilizadas
 
-- Las publicaciones pueden recibir **comentarios** por parte de otros usuarios.
+- Node.js
+- Express.js
+- Sequelize ORM
+- SQLite
+- MySQL (opcional)
+- Joi
+- Swagger
+- dotenv
 
-- Las publicaciones pueden estar asociadas a **etiquetas (tags)**. Una misma etiqueta puede estar vinculada a múltiples publicaciones.
+---
 
-- Es importante que los **comentarios más antiguos que X meses** (valor configurable mediante variables de entorno, por ejemplo, 6 meses) **no se muestren** en la visualización de los posteos.
+# 📂 Estructura del proyecto
 
-####
+```text
+.
+├── controllers/
+├── middlewares/
+├── models/
+├── routes/
+├── schemas/
+├── config/
+├── data/
+├── swagger.yml
+├── app.js
+├── package.json
+└── .env
+```
 
-# Entidades y Reglas de Negocio
+---
 
-Los sponsors definieron los siguientes nombres y descripciones para las entidades:
+# ⚙️ Instalación
 
-- **User**: Representa a los usuarios registrados en el sistema. El campo `nickName` debe ser **único** y funcionará como identificador principal del usuario.
+## 1. Clonar el repositorio
 
-- **Post**: Publicación realizada por un usuario en una fecha determinada que contiene el texto que desea publicar. Puede tener **cero o más imágenes** asociadas. Debe contemplarse la posibilidad de **agregar o eliminar imágenes** posteriormente.
+```bash
+git clone https://github.com/EP-UnaHur-2026C1/anti-social-relational-tp-persistenciadeestrategia.git
+cd anti-social-relational-tp-persistenciadeestrategia
+```
 
-- **Post_Images**: Entidad que registra las imágenes asociadas a los posts. Para el MVP, solo se requiere almacenar la **URL de la imagen alojada**.
+## 2. Instalar dependencias
 
-- **Comment**: Comentario que un usuario puede realizar sobre una publicación. Incluye la fecha en la que fue realizado y una indicación de si está **visible o no**, dependiendo de la configuración (X meses).
+```bash
+npm install
+```
 
-- **Tag**: Etiqueta que puede ser asignada a un post. Una etiqueta puede estar asociada a **muchos posts**, y un post puede tener **múltiples etiquetas**.
+## 3. Configurar variables de entorno
 
-# Requerimientos Técnicos
+Crear un archivo `.env` en la raíz del proyecto.
 
-1. **Modelado de Datos**
+### SQLite
 
-   - Diseñar el **Diagrama Entidad-Relación (DER)** considerando relaciones de tipo uno a muchos y muchos a muchos.
+```env
+PORT=3000
 
-   - Además de las claves primarias, identificar en qué entidades se requiere una **clave única** (`unique key`), y definirla explícitamente.
+NODE_ENV=development
 
-2. **Desarrollo del Backend**
+DB_DIALECT=sqlite
+DB_STORAGE=./data/data.sqlite
 
-   - Crear los **endpoints CRUD** necesarios para cada entidad.
+MESES_VISIBLES=6
+```
 
-   - Implementar las rutas necesarias para gestionar las relaciones entre entidades (por ejemplo: asociar imágenes a un post, etiquetas a una publicación, etc.).
+### MySQL
 
-   - Desarrollar las validaciones necesarias para asegurar la integridad de los datos (schemas, validaciones de integridad referencial).
+```env
+PORT=3000
 
-3. **Configuración y Portabilidad**
+NODE_ENV=development
 
-   - El sistema debe poder cambiar de **base de datos** de forma transparente, utilizando configuración e instalación de dependencias adecuadas.
+DB_DIALECT=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=anti-social
+DB_USER=root
+DB_PASSWORD=1234
 
-   - El sistema debe permitir configurar el **puerto de ejecución y variables de entorno** fácilmente.
+MESES_VISIBLES=6
+```
 
-4. **Documentación**
+---
 
-   - Generar la documentación de la API utilizando **Swagger (formato YAML)**, incluyendo todos los endpoints definidos.
+# ▶️ Ejecución
 
-5. **Colecciones de Prueba**
+## Producción
 
-   - Entregar las colecciones necesarias para realizar pruebas (por ejemplo, colecciones de Postman o archivos JSON de ejemplo).
+```bash
+npm start
+```
 
-###
+## Desarrollo
 
-# Recomendaciones y ayudas
+```bash
+npm run dev
+```
 
-Les entregamos este link que apunta a un front-end ya desarrollado para que puedan investigarlo y puedan crear el back-end que se ajuste lo máximo posible el funcionamiento del front.
+Servidor disponible en:
 
-[https://unahur.vmdigitai.com/redes-front/users](https://unahur.vmdigitai.com/redes-front/users)
+```text
+http://localhost:3000
+```
 
-Por otro lado les dejamos la documentación de los endpoint para que también la puedan revisar y armar siguiendo este link
+---
 
-[https://unahur.vmdigitai.com/swagger/](https://unahur.vmdigitai.com/swagger/)
+# 📚 Swagger
 
-# Bonus
+La documentación interactiva puede visualizarse en:
 
-1. Hace el upload de las imágenes que se asocian a un POST que lo guarden en una carpeta de imágenes dentro del servidor web.
-2. ¿Cómo modelarías que un usuario pueda "seguir" a otros usuarios, y a su vez ser seguido por muchos? Followers
-3. Como la información de los post no varía muy seguido ¿Qué estrategias podrían utilizar para que la información no sea constantemente consultada desde la base de datos?
+```text
+http://localhost:3000/api-docs
+```
+
+---
+
+# 🗄️ Modelo de datos
+
+## User
+
+| Campo | Tipo |
+|---------|---------|
+| id | Integer |
+| nickName | String |
+| email | String |
+| password | String |
+
+---
+
+## Post
+
+| Campo | Tipo |
+|---------|---------|
+| id | Integer |
+| descripcion | String |
+| userId | Integer |
+
+---
+
+## Post_Image
+
+| Campo | Tipo |
+|---------|---------|
+| id | Integer |
+| url | String |
+| postId | Integer |
+
+---
+
+## Comment
+
+| Campo | Tipo |
+|---------|---------|
+| id | Integer |
+| content | String |
+| visible | Boolean |
+| userId | Integer |
+| postId | Integer |
+
+---
+
+## Tag
+
+| Campo | Tipo |
+|---------|---------|
+| id | Integer |
+| name | String |
+
+---
+
+## Follow
+
+| Campo | Tipo |
+|---------|---------|
+| followerId | Integer |
+| followingId | Integer |
+
+---
+
+# 🔗 Relaciones
+
+### User
+
+- Tiene muchas publicaciones (`hasMany Post`)
+- Tiene muchos comentarios (`hasMany Comment`)
+- Tiene muchos seguidores (`belongsToMany User`)
+- Sigue a muchos usuarios (`belongsToMany User`)
+
+### Post
+
+- Pertenece a un usuario (`belongsTo User`)
+- Tiene muchas imágenes (`hasMany Post_Image`)
+- Tiene muchos comentarios (`hasMany Comment`)
+- Tiene muchos tags (`belongsToMany Tag`)
+
+### Comment
+
+- Pertenece a un usuario
+- Pertenece a una publicación
+
+### Tag
+
+- Puede estar asociado a múltiples publicaciones
+
+---
+
+# 📌 Endpoints
+
+## 👤 Usuarios
+
+### Obtener todos los usuarios
+
+```http
+GET /users
+```
+
+### Obtener usuario por ID
+
+```http
+GET /users/:id
+```
+
+### Crear usuario
+
+```http
+POST /users
+```
+
+Body:
+
+```json
+{
+  "nickName": "santiago",
+  "email": "santiago@email.com",
+  "password": "123456"
+}
+```
+
+### Actualizar usuario
+
+```http
+PUT /users/:id
+```
+
+### Eliminar usuario
+
+```http
+DELETE /users/:id
+```
+
+---
+
+## 📝 Publicaciones
+
+### Obtener publicaciones
+
+```http
+GET /posts
+```
+
+### Obtener publicación por ID
+
+```http
+GET /posts/:id
+```
+
+### Crear publicación
+
+```http
+POST /posts
+```
+
+Body:
+
+```json
+{
+  "descripcion": "Mi primer post",
+  "userId": 1
+}
+```
+
+### Actualizar publicación
+
+```http
+PUT /posts/:id
+```
+
+### Eliminar publicación
+
+```http
+DELETE /posts/:id
+```
+
+---
+
+## 🖼️ Imágenes de publicaciones
+
+### Obtener imágenes de un post
+
+```http
+GET /posts/:id/images
+```
+
+### Agregar imagen
+
+```http
+POST /posts/:id/images
+```
+
+Body:
+
+```json
+{
+  "url": "https://miimagen.com/foto.jpg"
+}
+```
+
+### Eliminar imagen
+
+```http
+DELETE /posts/:id/images/:imageId
+```
+
+---
+
+## 🏷️ Tags
+
+### Obtener todos los tags
+
+```http
+GET /tags
+```
+
+### Obtener tag por ID
+
+```http
+GET /tags/:id
+```
+
+### Crear tag
+
+```http
+POST /tags
+```
+
+Body:
+
+```json
+{
+  "name": "programacion"
+}
+```
+
+### Actualizar tag
+
+```http
+PUT /tags/:id
+```
+
+### Eliminar tag
+
+```http
+DELETE /tags/:id
+```
+
+---
+
+## 🔖 Asociación Post-Tag
+
+### Asignar múltiples tags
+
+```http
+POST /posts/:id/tags
+```
+
+Body:
+
+```json
+{
+  "tagsIds": [1, 2, 3]
+}
+```
+
+### Asociar un tag
+
+```http
+POST /posts/:id/tags/:tagId
+```
+
+### Desasociar un tag
+
+```http
+DELETE /posts/:id/tags/:tagId
+```
+
+---
+
+## 💬 Comentarios
+
+### Obtener comentarios
+
+```http
+GET /comments
+```
+
+### Crear comentario
+
+```http
+POST /comments
+```
+
+Body:
+
+```json
+{
+  "content": "Excelente publicación",
+  "userId": 1,
+  "postId": 1
+}
+```
+
+### Actualizar comentario
+
+```http
+PUT /comments/:id
+```
+
+### Eliminar comentario
+
+```http
+DELETE /comments/:id
+```
+
+---
+
+## 👥 Seguidores
+
+### Seguir usuario
+
+```http
+POST /followers/:userId/:targetId
+```
+
+### Dejar de seguir usuario
+
+```http
+DELETE /followers/:userId/:targetId
+```
+
+### Obtener seguidores
+
+```http
+GET /followers/:userId
+```
+
+### Obtener seguidos
+
+```http
+GET /followers/following/:userId
+```
+
+---
+
+# ✅ Validaciones
+
+El proyecto utiliza **Joi** para validar los datos recibidos.
+
+## Usuarios
+
+- nickName obligatorio.
+- Entre 3 y 30 caracteres.
+- Email válido.
+- Contraseña mínima de 6 caracteres.
+
+## Comentarios
+
+- Contenido obligatorio.
+- Máximo 500 caracteres.
+
+## Tags
+
+- Nombre obligatorio.
+- Entre 2 y 30 caracteres.
+
+## Posts
+
+- Descripción obligatoria.
+
+
+---
+
+# 👨‍💻 Integrantes
+
+- Estefania Abigail Almirón
+- Sofía Agustina Gómez
+- Gonzalo Martin Herlein
+- Santiago Roberto Torales
+- Thomas Vai
+
+---
+
+# 🎓 Universidad
+
+Trabajo práctico desarrollado para la **Universidad Nacional de Hurlingham (UNAHUR)**.
+
+Materia: **Estrategias de persistencias**.
+
+Año: **2026**
