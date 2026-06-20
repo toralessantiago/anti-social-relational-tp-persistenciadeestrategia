@@ -24,7 +24,6 @@ router.post(
 router.put(
   "/:id",
   postMiddlewares.validatePostExists,
-  postMiddlewares.validateUpdatePost,
   postController.updatePost,
 );
 router.delete(

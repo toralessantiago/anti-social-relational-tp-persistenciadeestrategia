@@ -12,11 +12,11 @@ tags:
   - name: Followers
     description: Gestión de seguidores y seguidos entre usuarios
   - name: Posts
-    description: Operaciones de publicaciones y multimedia
+    description: Operaciones de publicaciones, imágenes asociadas y asignación de etiquetas
   - name: Comments
     description: Operaciones de comentarios con filtrado de fechas
   - name: Tags
-    description: Gestión de etiquetas y relaciones Muchos a Muchos
+    description: Operaciones del catálogo general de etiquetas del sistema
 
 paths:
   # --- ENDPOINTS DE USERS ---

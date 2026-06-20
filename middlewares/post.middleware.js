@@ -30,16 +30,6 @@ const validatePostExists = async (req, res, next) => {
   next();
 };
 
-const validateCreatePost = (req, res, next) => {
-  const { error } = createPostSchema.validate(req.body);
-
-  if (error) {
-    return res.status(400).json({
-      error: error.details[0].message,
-    });
-  }
-};
-
 const validateCreatePost = async (req, res, next) => {
   const { error } = createPostSchema.validate(req.body);
 
