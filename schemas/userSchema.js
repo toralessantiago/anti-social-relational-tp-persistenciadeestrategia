@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 const userSchema = Joi.object({
-  nickName: Joi.string().min(3).max(30).required(),
+  nickname: Joi.string().min(3).max(30).required(),
 
   email: Joi.string().email().required(),
 

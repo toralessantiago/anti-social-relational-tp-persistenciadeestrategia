@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Post.init(
     {
-      descripcion: {
+      description: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Post",
-    }
+    },
   );
 
   return Post;

@@ -1,10 +1,9 @@
-const Joi = require("joi")
+const Joi = require("joi");
 
 const postSchema = Joi.object({
+  description: Joi.string().trim().min(5).required(),
 
-    descripcion: Joi.string().trim().min(5).required(),
+  userId: Joi.number().integer().positive().required(),
+});
 
-    userId: Joi.string().min(3).max(30).required()
-})
-
-module.exports = postSchema
+module.exports = postSchema;

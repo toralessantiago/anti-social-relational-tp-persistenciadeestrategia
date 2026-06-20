@@ -39,7 +39,7 @@ router.delete(
   postController.deleteImagePost,
 );
 
-// --- POSTTAG ---
+// --- POST TAG ---
 
 router.post(
   "/:id/tags",

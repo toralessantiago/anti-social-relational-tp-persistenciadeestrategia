@@ -13,6 +13,11 @@ const getPosts = async (req, res) => {
           attributes: ["id", "name"],
           through: { attributes: [] },
         },
+        {
+          model: User,
+          as: "user",
+          attributes: ["id", "nickname", "email"],
+        },
       ],
     });
 
@@ -28,43 +33,60 @@ const getPosts = async (req, res) => {
 const getPostId = async (req, res) => {
   const id = Number(req.params.id);
 
-  const post = await Post.findByPk(id, {
-    include: [
-      { model: User, as: "user", attributes: ["id", "nickName"] },
-      "postImages",
-      {
-        model: Tag,
-        as: "tags",
-        attributes: ["id", "name"],
-        through: { attributes: [] },
-      },
-    ],
-  });
+  try {
+    const post = await Post.findByPk(id, {
+      include: [
+        "postImages",
+        {
+          model: Tag,
+          as: "tags",
+          attributes: ["id", "name"],
+          through: { attributes: [] },
+        },
+        {
+          model: User,
+          as: "user",
+          attributes: ["id", "nickname", "email"],
+        },
+      ],
+    });
 
-  if (!post) {
-    return res.status(404).json({
-      error: "Post no encontrado",
+    if (!post) {
+      return res.status(404).json({
+        error: "Post no encontrado",
+      });
+    }
+
+    res.json(post);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
     });
   }
-
-  res.json(post);
 };
 
 //GET Post Images
 const getPostImages = async (req, res) => {
-  const images = await Post_Image.findAll({
-    where: {
-      postId: req.params.id,
-    },
-  });
+  try {
+    const images = await Post_Image.findAll({
+      where: {
+        postId: req.params.id,
+      },
+    });
 
-  res.json(images);
+    res.json(images);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 };
 
+//POST
 const createPost = async (req, res) => {
   try {
     const nuevoPost = await Post.create({
-      descripcion: req.body.descripcion,
+      description: req.body.description,
       userId: req.body.userId,
     });
 
@@ -78,42 +100,66 @@ const createPost = async (req, res) => {
 
 //addImage
 const addImage = async (req, res) => {
-  const image = await Post_Image.create({
-    url: req.body.url,
-    postId: req.post.id,
-  });
+  try {
+    const image = await Post_Image.create({
+      url: req.body.url,
+      postId: req.post.id,
+    });
 
-  res.status(201).json(image);
+    res.status(201).json(image);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 };
 
 //PUT
 const updatePost = async (req, res) => {
-  await req.post.update({
-    descripcion: req.body.descripcion,
-  });
+  try {
+    await req.post.update({
+      description: req.body.description,
+    });
 
-  res.json(req.post);
+    res.json(req.post);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 };
 
 //DELETE
 const deletePost = async (req, res) => {
-  await req.post.destroy();
+  try {
+    await req.post.destroy();
 
-  res.json({
-    message: "Post eliminado",
-  });
+    res.json({
+      message: "Post eliminado",
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 };
 
 //DELETE Image Post
 const deleteImagePost = async (req, res) => {
-  await req.image.destroy();
+  try {
+    await req.image.destroy();
 
-  res.json({
-    message: "Imagen del post eliminada",
-  });
+    res.json({
+      message: "Imagen del post eliminada",
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 };
 
-// --- POSTTAG ---
+// --- POST TAG ---
 
 //POST Assign Tags
 const assignTags = async (req, res) => {

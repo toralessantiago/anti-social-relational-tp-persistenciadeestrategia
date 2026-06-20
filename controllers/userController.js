@@ -1,10 +1,23 @@
-const { User } = require("../models");
+const { User, Post, Comment } = require("../models");
+const userSchema = require("../schemas/userSchema");
 
 // GET USERS
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll({
-      attributes: ["id", "nickName", "email"],
+      attributes: ["id", "nickname", "email"],
+      include: [
+        {
+          model: Post,
+          as: "posts",
+          attributes: ["id", "description"],
+        },
+        {
+          model: Comment,
+          as: "comments",
+          attributes: ["id", "content", "postId"],
+        },
+      ],
     });
 
     res.status(200).json({
@@ -23,6 +36,18 @@ const getUserById = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {
       attributes: ["id", "nickName", "email"],
+      include: [
+        {
+          model: Post,
+          as: "posts",
+          attributes: ["id", "description"],
+        },
+        {
+          model: Comment,
+          as: "comments",
+          attributes: ["id", "content", "postId"],
+        },
+      ],
     });
 
     if (!user) {
@@ -63,7 +88,7 @@ const createUser = async (req, res) => {
       message: "Usuario creado con éxito.",
       data: {
         id: user.id,
-        nickName: user.nickName,
+        nickname: user.nickname,
         email: user.email,
       },
     });
@@ -105,7 +130,7 @@ const updateUser = async (req, res) => {
       message: "Usuario actualizado con éxito.",
       data: {
         id: user.id,
-        nickName: user.nickName,
+        nickname: user.nickname,
         email: user.email,
       },
     });
