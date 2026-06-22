@@ -1,32 +1,9 @@
-<<<<<<< HEAD
-const { User, Post, Comment } = require("../models");
-const userSchema = require("../schemas/userSchema");
-=======
 const User = require("../models/User");
->>>>>>> santi/users-followers
 
 // GET USERS
 const getUsers = async (req, res) => {
   try {
-<<<<<<< HEAD
-    const users = await User.findAll({
-      attributes: ["id", "nickname", "email"],
-      include: [
-        {
-          model: Post,
-          as: "posts",
-          attributes: ["id", "description"],
-        },
-        {
-          model: Comment,
-          as: "comments",
-          attributes: ["id", "content", "postId"],
-        },
-      ],
-    });
-=======
     const users = await User.find().select("_id nickName email");
->>>>>>> santi/users-followers
 
     res.status(200).json({
       message: "Usuarios obtenidos con éxito.",
@@ -42,27 +19,9 @@ const getUsers = async (req, res) => {
 // GET USER BY ID
 const getUserById = async (req, res) => {
   try {
-<<<<<<< HEAD
-    const user = await User.findByPk(req.params.id, {
-      attributes: ["id", "nickName", "email"],
-      include: [
-        {
-          model: Post,
-          as: "posts",
-          attributes: ["id", "description"],
-        },
-        {
-          model: Comment,
-          as: "comments",
-          attributes: ["id", "content", "postId"],
-        },
-      ],
-    });
-=======
     const user = await User.findById(req.params.id).select(
       "_id nickName email"
     );
->>>>>>> santi/users-followers
 
     if (!user) {
       return res.status(404).json({
@@ -99,13 +58,8 @@ const createUser = async (req, res) => {
     res.status(201).json({
       message: "Usuario creado con éxito.",
       data: {
-<<<<<<< HEAD
-        id: user.id,
-        nickname: user.nickname,
-=======
         id: user._id,
         nickName: user.nickName,
->>>>>>> santi/users-followers
         email: user.email,
       },
     });
@@ -153,15 +107,9 @@ const updateUser = async (req, res) => {
     res.status(200).json({
       message: "Usuario actualizado con éxito.",
       data: {
-<<<<<<< HEAD
-        id: user.id,
-        nickname: user.nickname,
-        email: user.email,
-=======
         id: updatedUser._id,
         nickName: updatedUser.nickName,
         email: updatedUser.email,
->>>>>>> santi/users-followers
       },
     });
   } catch (error) {
