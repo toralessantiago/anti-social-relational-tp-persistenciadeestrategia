@@ -7,11 +7,9 @@ const YAML = require("js-yaml");
 const swaggerUi = require("swagger-ui-express");
 
 const connectDB = require("./config/config");
+
 const routerUsers = require("./routes/userRoutes");
 const routerFollowers = require("./routes/followerRoutes");
-const routerComments = require("./routes/commentRoutes");
-const routerTag = require("./routes/tagRoutes");
-const routerPost = require("./routes/postsRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,14 +21,9 @@ const swaggerDocument = YAML.load(
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.use(express.json());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use("/users", routerUsers);
 app.use("/followers", routerFollowers);
-app.use("/comments", routerComments);
-app.use("/posts", routerPost);
-app.use("/tags", routerTag);
 
 const startServer = async () => {
   try {
