@@ -1,5 +1,6 @@
-require("dotenv").config();
+const mongoose = require("mongoose");
 
+<<<<<<< Updated upstream
 module.exports = {
   development: {
     dialect: process.env.DB_DIALECT || 'sqlite',
@@ -27,3 +28,17 @@ module.exports = {
     password: process.env.DB_PASSWORD
   }
 };
+=======
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+
+    console.log("MongoDB conectada");
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
+>>>>>>> Stashed changes

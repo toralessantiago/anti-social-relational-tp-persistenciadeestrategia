@@ -1,11 +1,9 @@
-const { User } = require("../models");
+const User = require("../models/User");
 
 // GET USERS
 const getUsers = async (req, res) => {
   try {
-    const users = await User.findAll({
-      attributes: ["id", "nickName", "email"],
-    });
+    const users = await User.find().select("_id nickName email");
 
     res.status(200).json({
       message: "Usuarios obtenidos con éxito.",
@@ -21,9 +19,9 @@ const getUsers = async (req, res) => {
 // GET USER BY ID
 const getUserById = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id, {
-      attributes: ["id", "nickName", "email"],
-    });
+    const user = await User.findById(req.params.id).select(
+      "_id nickName email"
+    );
 
     if (!user) {
       return res.status(404).json({
@@ -46,9 +44,7 @@ const getUserById = async (req, res) => {
 const createUser = async (req, res) => {
   try {
     const existingUser = await User.findOne({
-      where: {
-        nickName: req.body.nickName,
-      },
+      nickName: req.body.nickName,
     });
 
     if (existingUser) {
@@ -62,7 +58,7 @@ const createUser = async (req, res) => {
     res.status(201).json({
       message: "Usuario creado con éxito.",
       data: {
-        id: user.id,
+        id: user._id,
         nickName: user.nickName,
         email: user.email,
       },
@@ -77,7 +73,7 @@ const createUser = async (req, res) => {
 // UPDATE USER
 const updateUser = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findById(req.params.id);
 
     if (!user) {
       return res.status(404).json({
@@ -87,26 +83,33 @@ const updateUser = async (req, res) => {
 
     if (req.body.nickName) {
       const existingUser = await User.findOne({
-        where: {
-          nickName: req.body.nickName,
-        },
+        nickName: req.body.nickName,
       });
 
-      if (existingUser && existingUser.id !== user.id) {
+      if (
+        existingUser &&
+        existingUser._id.toString() !== user._id.toString()
+      ) {
         return res.status(400).json({
           error: "El nickname ya existe.",
         });
       }
     }
 
-    await user.update(req.body);
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
 
     res.status(200).json({
       message: "Usuario actualizado con éxito.",
       data: {
-        id: user.id,
-        nickName: user.nickName,
-        email: user.email,
+        id: updatedUser._id,
+        nickName: updatedUser.nickName,
+        email: updatedUser.email,
       },
     });
   } catch (error) {
@@ -119,7 +122,7 @@ const updateUser = async (req, res) => {
 // DELETE USER
 const deleteUser = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findById(req.params.id);
 
     if (!user) {
       return res.status(404).json({
@@ -127,7 +130,7 @@ const deleteUser = async (req, res) => {
       });
     }
 
-    await user.destroy();
+    await User.findByIdAndDelete(req.params.id);
 
     res.status(200).json({
       message: "Usuario eliminado con éxito.",

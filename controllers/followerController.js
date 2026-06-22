@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const User = require("../models/User");
 
 // FOLLOW USER
 const followUser = async (req, res) => {
@@ -11,8 +11,8 @@ const followUser = async (req, res) => {
       });
     }
 
-    const user = await User.findByPk(userId);
-    const targetUser = await User.findByPk(targetId);
+    const user = await User.findById(userId);
+    const targetUser = await User.findById(targetId);
 
     if (!user || !targetUser) {
       return res.status(404).json({
@@ -20,7 +20,9 @@ const followUser = async (req, res) => {
       });
     }
 
-    const alreadyFollowing = await user.hasFollowing(targetUser);
+    const alreadyFollowing = user.following.some(
+      (id) => id.toString() === targetId
+    );
 
     if (alreadyFollowing) {
       return res.status(400).json({
@@ -28,7 +30,11 @@ const followUser = async (req, res) => {
       });
     }
 
-    await user.addFollowing(targetUser);
+    user.following.push(targetId);
+    targetUser.followers.push(userId);
+
+    await user.save();
+    await targetUser.save();
 
     return res.json({
       message: "Usuario seguido correctamente",
@@ -45,8 +51,8 @@ const unfollowUser = async (req, res) => {
   try {
     const { userId, targetId } = req.params;
 
-    const user = await User.findByPk(userId);
-    const targetUser = await User.findByPk(targetId);
+    const user = await User.findById(userId);
+    const targetUser = await User.findById(targetId);
 
     if (!user || !targetUser) {
       return res.status(404).json({
@@ -54,15 +60,16 @@ const unfollowUser = async (req, res) => {
       });
     }
 
-    const isFollowing = await user.hasFollowing(targetUser);
+    user.following = user.following.filter(
+      (id) => id.toString() !== targetId
+    );
 
-    if (!isFollowing) {
-      return res.status(400).json({
-        error: "No sigues a este usuario",
-      });
-    }
+    targetUser.followers = targetUser.followers.filter(
+      (id) => id.toString() !== userId
+    );
 
-    await user.removeFollowing(targetUser);
+    await user.save();
+    await targetUser.save();
 
     return res.json({
       message: "Usuario dejado de seguir",
@@ -77,7 +84,8 @@ const unfollowUser = async (req, res) => {
 // GET FOLLOWERS
 const getFollowers = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.userId);
+    const user = await User.findById(req.params.userId)
+      .populate("followers", "nickName email");
 
     if (!user) {
       return res.status(404).json({
@@ -85,12 +93,9 @@ const getFollowers = async (req, res) => {
       });
     }
 
-    const followers = await user.getFollowers({
-      attributes: ["id", "nickName", "email"],
-      joinTableAttributes: [],
+    return res.json({
+      data: user.followers,
     });
-
-    return res.json(followers);
   } catch (error) {
     return res.status(500).json({
       error: "Error al obtener followers",
@@ -101,7 +106,8 @@ const getFollowers = async (req, res) => {
 // GET FOLLOWING
 const getFollowing = async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.userId);
+    const user = await User.findById(req.params.userId)
+      .populate("following", "nickName email");
 
     if (!user) {
       return res.status(404).json({
@@ -109,13 +115,8 @@ const getFollowing = async (req, res) => {
       });
     }
 
-    const following = await user.getFollowing({
-      attributes: ["id", "nickName", "email"],
-      joinTableAttributes: [],
-    });
-
     return res.json({
-      data: following,
+      data: user.following,
     });
   } catch (error) {
     return res.status(500).json({
